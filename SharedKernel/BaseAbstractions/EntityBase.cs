@@ -1,17 +1,20 @@
 ﻿using System;
+using System.Collections.Generic;
 
-namespace SharedKernel.Domain
+namespace SharedKernel.BaseAbstractions
 {
-    public abstract class EntityBase<IdType> : IEquatable<EntityBase<IdType>>
+    public abstract class EntityBase<IdType> : ValidatableObject, IEquatable<EntityBase<IdType>>
     {
-        private readonly IdType _id;
+        #region Validation
+
+        #endregion
 
         protected EntityBase(IdType id)
         {
-            _id = id;
+            Id = id;
         }
 
-        private IdType Id => _id;
+        private IdType Id { get; }
 
         public override bool Equals(object entity)
         {

@@ -1,9 +1,9 @@
 ﻿using System;
-using SharedKernel.Domain;
+using SharedKernel.BaseAbstractions;
 
 namespace Domain
 {
-    public sealed class User : EntityBase<Guid>
+    public sealed class User : EntityBase<Guid>, IAggregateRoot
     {
         public string FirstName { get; }
         public string LastName { get; }

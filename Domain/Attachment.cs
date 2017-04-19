@@ -1,4 +1,4 @@
-﻿using SharedKernel.Domain;
+﻿using SharedKernel.BaseAbstractions;
 
 namespace Domain
 {

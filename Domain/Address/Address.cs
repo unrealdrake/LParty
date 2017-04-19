@@ -1,7 +1,7 @@
 ﻿using System;
-using SharedKernel.Domain;
+using SharedKernel.BaseAbstractions;
 
-namespace Domain
+namespace Domain.Address
 {
     public sealed class Address : ValueObjectBase<Address>
     {
@@ -10,9 +10,6 @@ namespace Domain
 
         private Address(string city, string country)
         {
-            if (string.IsNullOrEmpty(city)) throw new ArgumentException(nameof(city));
-            if (string.IsNullOrEmpty(country)) throw new ArgumentException(nameof(country));
-
             this.City = city;
             this.Country = country;
         }
@@ -20,6 +17,18 @@ namespace Domain
         public static Address Create(string city, string country)
         {
             return new Address(city, country);
+        }
+
+        protected override void Validate()
+        {
+            if (string.IsNullOrEmpty(this.City))
+            {
+                AddBrokenRule(AddressBusinessRule.CityRequired);
+            }
+            if (string.IsNullOrEmpty(this.Country))
+            {
+                AddBrokenRule(AddressBusinessRule.CountryRequired);
+            }
         }
 
         public override bool Equals(Address otherAddress)
