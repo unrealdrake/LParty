@@ -1,15 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26403.0
+VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{D71D5046-C81F-4AAF-8E79-562B8A83F449}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedKernel", "SharedKernel\SharedKernel.csproj", "{94980E0A-AACE-4441-ADBF-0B5C39018990}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedKernel", "SharedKernel\SharedKernel.csproj", "{94980E0A-AACE-4441-ADBF-0B5C39018990}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LPBusinessBoundedContext", "LPBusinessBoundedContext", "{4AD69B8E-BF12-4836-A739-C4858CFC5D8F}"
 EndProject
 Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "BusinessBoundedConextModelling", "BusinessBoundedConext\BusinessBoundedConextModelling.modelproj", "{2546EC16-D408-4FB9-BFBC-F57D54045BBD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BoundedContexts", "BoundedContexts", "{CDDF776F-743F-4585-A460-EB098141D106}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{D1999C9A-BDF9-4F8B-964F-453AFF514C6B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,13 +29,19 @@ Global
 		{2546EC16-D408-4FB9-BFBC-F57D54045BBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2546EC16-D408-4FB9-BFBC-F57D54045BBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2546EC16-D408-4FB9-BFBC-F57D54045BBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1999C9A-BDF9-4F8B-964F-453AFF514C6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1999C9A-BDF9-4F8B-964F-453AFF514C6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1999C9A-BDF9-4F8B-964F-453AFF514C6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1999C9A-BDF9-4F8B-964F-453AFF514C6B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{94980E0A-AACE-4441-ADBF-0B5C39018990} = {D71D5046-C81F-4AAF-8E79-562B8A83F449}
-		{4AD69B8E-BF12-4836-A739-C4858CFC5D8F} = {D71D5046-C81F-4AAF-8E79-562B8A83F449}
+		{4AD69B8E-BF12-4836-A739-C4858CFC5D8F} = {CDDF776F-743F-4585-A460-EB098141D106}
 		{2546EC16-D408-4FB9-BFBC-F57D54045BBD} = {4AD69B8E-BF12-4836-A739-C4858CFC5D8F}
+		{CDDF776F-743F-4585-A460-EB098141D106} = {D71D5046-C81F-4AAF-8E79-562B8A83F449}
+		{D1999C9A-BDF9-4F8B-964F-453AFF514C6B} = {4AD69B8E-BF12-4836-A739-C4858CFC5D8F}
 	EndGlobalSection
 EndGlobal
