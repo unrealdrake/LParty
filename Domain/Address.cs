@@ -3,7 +3,7 @@ using SharedKernel.Domain;
 
 namespace Domain
 {
-    public class Address : ValueObjectBase<Address>
+    public sealed class Address : ValueObjectBase<Address>
     {
         public string City { get; }
         public string Country { get; }

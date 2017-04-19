@@ -2,7 +2,7 @@
 
 namespace Domain
 {
-    public class Settings : ValueObjectBase<Settings>
+    public sealed class Settings : ValueObjectBase<Settings>
     {
         public bool AllowedToConnect { get; }
 
