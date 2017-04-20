@@ -1,4 +1,5 @@
 ﻿using System;
+using Domain.Address_Area;
 using SharedKernel.BaseAbstractions;
 
 namespace Domain

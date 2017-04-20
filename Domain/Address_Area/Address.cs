@@ -1,11 +1,30 @@
 ﻿using System;
+using System.Collections.Generic;
+using Domain.Address_Area.Validators;
+using FluentValidation.Results;
 using SharedKernel.BaseAbstractions;
 
-namespace Domain.Address
+namespace Domain.Address_Area
 {
     public sealed class Address : ValueObjectBase<Address>
     {
-        public string City { get; }
+        private string _city;
+
+        public string City
+        {
+            get
+            {
+                return _city;
+            }
+            set
+            {
+                if (value != null)
+                {
+                    EnsureIsValid(new CountryValidator(), value, checkForNull);
+                }
+            }
+        }
+
         public string Country { get; }
 
         private Address(string city, string country)
@@ -17,18 +36,6 @@ namespace Domain.Address
         public static Address Create(string city, string country)
         {
             return new Address(city, country);
-        }
-
-        protected override void Validate()
-        {
-            if (string.IsNullOrEmpty(this.City))
-            {
-                AddBrokenRule(AddressBusinessRule.CityRequired);
-            }
-            if (string.IsNullOrEmpty(this.Country))
-            {
-                AddBrokenRule(AddressBusinessRule.CountryRequired);
-            }
         }
 
         public override bool Equals(Address otherAddress)

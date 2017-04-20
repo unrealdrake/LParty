@@ -2,7 +2,7 @@
 <DirectedGraph DataVirtualized="True" Layout="Sugiyama" ZoomLevel="-1" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
   <Nodes>
     <Node Id="Address" Category="CodeSchema_Class" Bounds="149.519484682618,-37.1263301059033,83.51,26" Label="Address" UseManualLocation="True" />
-    <Node Id="AggreagetRoot" Bounds="190.424393615723,-153.126630105903,124.08,86.0002" Group="Expanded" Label="Aggreaget Root" UseManualLocation="True" />
+    <Node Id="AggreagetRoot" Bounds="190.424393615723,-153.126630105903,124.08,86.0002" Group="Expanded" Label="Aggregate Root" UseManualLocation="True" />
     <Node Id="AggregateRoot" Bounds="-156.647113629905,-151.292163160121,120.793333333333,86.0002" Group="Expanded" Label="AggregateRoot" UseManualLocation="True" />
     <Node Id="Attachment" Category="CodeSchema_Class" Bounds="-149.192539450508,16.0931101304445,102.783333333333,26" Label="Attachment" UseManualLocation="True" />
     <Node Id="News" Category="CodeSchema_Class" Bounds="-134.178780296571,-111.292063160121,75.8566666666667,26" Label="EVENT" UseManualLocation="True" />
@@ -10,12 +10,12 @@
     <Node Id="USER" Category="CodeSchema_Class" Bounds="218.032726949056,-113.126530105903,68.8633333333333,26" Label="USER" UseManualLocation="True" />
   </Nodes>
   <Links>
-    <Link Source="AggreagetRoot" Target="Settings" Bounds="279.101528167725,-67.1264301059033,13.8445561501537,22.3491493707788" />
+    <Link Source="AggreagetRoot" Target="Settings" Bounds="279.101528167725,-67.126430105903,13.8445561501537,22.3491493707785" />
     <Link Source="AggreagetRoot" Target="USER" Category="Contains" />
-    <Link Source="AggregateRoot" Target="Attachment" Bounds="-97.5525845746577,-65.2919631601205,0.816877951770707,72.3856453251002" />
+    <Link Source="AggregateRoot" Target="Attachment" Bounds="-97.5526037838961,-65.291963160121,0.816890006694251,72.3856463415811" />
     <Link Source="AggregateRoot" Target="News" Category="Contains" />
-    <Link Source="AggregateRoot" Target="USER" Bounds="-35.8537758382162,-106.877813868724,244.88896155627,5.73434533062787" />
-    <Link Source="USER" Target="Address" Bounds="207.385298190332,-87.1265258789063,34.6124211360223,42.9899498461144" />
+    <Link Source="AggregateRoot" Target="USER" Bounds="-35.8537802965712,-106.877810250172,244.888973638083,5.73433870934579" />
+    <Link Source="USER" Target="Address" Bounds="207.385301134969,-87.126530105903,34.6124250755319,42.9899516781641" />
   </Links>
   <Categories>
     <Category Id="CodeSchema_Class" Label="Class" BasedOn="CodeSchema_Type" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Class" NavigationActionLabel="Classes" />
