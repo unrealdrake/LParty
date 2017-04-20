@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Domain.Attachment_Area;
 using SharedKernel.BaseAbstractions;
 
 namespace Domain

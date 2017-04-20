@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <Reference Include="FluentValidation">
-      <HintPath>C:\Users\i.teryohin\.nuget\packages\fluentvalidation\6.4.1\lib\netstandard1.0\FluentValidation.dll</HintPath>
+      <HintPath>C:\Users\unrea\.nuget\packages\fluentvalidation\6.4.1\lib\netstandard1.0\FluentValidation.dll</HintPath>
     </Reference>
   </ItemGroup>
 

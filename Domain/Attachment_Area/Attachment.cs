@@ -1,6 +1,6 @@
 ﻿using SharedKernel.BaseAbstractions;
 
-namespace Domain
+namespace Domain.Attachment_Area
 {
     public sealed class Attachment : ValueObjectBase<Attachment>
     {
