@@ -1,0 +1,5 @@
+﻿{
+  "connectionStrings": {
+    "LP": "server=localhost;database=mydb;integrated security=true"
+  }
+}
