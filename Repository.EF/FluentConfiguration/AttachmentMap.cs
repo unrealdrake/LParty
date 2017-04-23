@@ -1,8 +1,7 @@
-﻿
-using Microsoft.EntityFrameworkCore;
-using Repository.EF.DataModel;
+﻿using Microsoft.EntityFrameworkCore;
+using Repository.LPBusiness.EF.DataModel;
 
-namespace Repository.EF.FluentConfiguration
+namespace Repository.LPBusiness.EF.FluentConfiguration
 {
     internal class AttachmentMap
     {

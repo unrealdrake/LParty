@@ -3,10 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-using Repository.EF;
-using Domain.Attachment_Area;
 
-namespace Repository.EF.Migrations
+namespace Repository.LPBusiness.EF.Migrations
 {
     [DbContext(typeof(LPBusinessContext))]
     [Migration("20170423223734_Initial")]
@@ -18,7 +16,7 @@ namespace Repository.EF.Migrations
                 .HasAnnotation("ProductVersion", "1.0.2")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Repository.EF.DataModel.Attachment", b =>
+            modelBuilder.Entity("Repository.LPBusiness.EF.DataModel.Attachment", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -30,7 +28,7 @@ namespace Repository.EF.Migrations
                     b.ToTable("Attachments");
                 });
 
-            modelBuilder.Entity("Repository.EF.DataModel.Event", b =>
+            modelBuilder.Entity("Repository.LPBusiness.EF.DataModel.Event", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();

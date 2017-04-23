@@ -2,9 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
-using Repository.EF;
-using Domain.Attachment_Area;
+using Repository.LPBusiness.EF;
 
 namespace Repository.EF.Migrations
 {

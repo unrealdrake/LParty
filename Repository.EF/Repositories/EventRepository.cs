@@ -7,7 +7,7 @@ using Domain.Attachment_Area;
 using Domain.Repository;
 using Microsoft.EntityFrameworkCore;
 
-namespace Repository.EF.Repositories
+namespace Repository.LPBusiness.EF.Repositories
 {
     public sealed class EventRepository : IEventRepository
     {
