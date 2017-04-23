@@ -4,7 +4,9 @@ namespace Domain
 {
     public sealed class Settings : ValueObjectBase<Settings>
     {
+        #region [PROPS]
         public bool AllowedToConnect { get; }
+        #endregion
 
         private Settings(bool allowedToConnect)
         {

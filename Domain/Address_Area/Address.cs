@@ -6,6 +6,7 @@ namespace Domain.Address_Area
 {
     public sealed class Address : ValueObjectBase<Address>
     {
+        #region [PROPS]
         private string _city;
         public string City
         {
@@ -17,9 +18,9 @@ namespace Domain.Address_Area
         public string Country
         {
             get => _country;
-            set { EnsureIsValid(new CountryValidator(), value); _country = value; }
+            set { EnsureIsValid(new LastNameValidator(), value); _country = value; }
         }
-
+        #endregion 
 
         private Address(string city, string country)
         {

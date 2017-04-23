@@ -12,8 +12,4 @@
     <PackageReference Include="FluentValidation" Version="6.4.1" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Attachment_Area\Validators\" />
-  </ItemGroup>
-
 </Project>

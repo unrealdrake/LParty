@@ -7,8 +7,10 @@ namespace Domain
 {
     public sealed class Event: EntityBase<Guid>
     {
+        #region [PROPS]
         public DateTime DateTime { get; }
         public IReadOnlyCollection<Attachment> Attachments { get; }
+        #endregion
 
         private Event(Guid id, DateTime datetime, List<Attachment> attachments) : base(id)
         {

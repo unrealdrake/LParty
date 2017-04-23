@@ -4,7 +4,9 @@ namespace Domain.Attachment_Area
 {
     public sealed class Attachment : ValueObjectBase<Attachment>
     {
-        public AttachmentType Type { get; }
+        #region [PROPS]
+        public AttachmentType Type { get; set; }
+        #endregion
 
         private Attachment(AttachmentType attachmentType)
         {
