@@ -19,7 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Repository", "Domain
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repository", "Repository", "{EADCB106-8006-41F8-A52A-807B3BB4C607}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.EF", "Repository.EF\Repository.EF.csproj", "{00534E17-4969-42E1-B9D3-E0B3657CA0BF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.LPBusiness.EF", "Repository.EF\Repository.LPBusiness.EF.csproj", "{00534E17-4969-42E1-B9D3-E0B3657CA0BF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{ABA022A1-7FA4-485D-8B11-1599C0F46CF5}"
 EndProject
