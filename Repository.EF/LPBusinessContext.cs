@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Repository.LPBusiness.EF.DataModel;
-using Repository.LPBusiness.EF.FluentConfiguration;
+using RepositoryLPBusiness.EF.DataModel;
+using RepositoryLPBusiness.EF.FluentConfiguration;
 using Shared.Config;
 
-namespace Repository.LPBusiness.EF
+namespace RepositoryLPBusiness.EF
 {
     public sealed class LPBusinessContext : DbContext
     {

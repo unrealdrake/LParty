@@ -2,9 +2,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Repository.LPBusiness.EF;
 
-namespace Repository.EF.Migrations
+namespace RepositoryLPBusiness.EF.Migrations
 {
     [DbContext(typeof(LPBusinessContext))]
     partial class LPBusinessContextModelSnapshot : ModelSnapshot

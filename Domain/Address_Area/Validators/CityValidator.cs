@@ -2,7 +2,7 @@
 
 namespace Domain.Address_Area.Validators
 {
-    public sealed class CityValidator:AbstractValidator<string>
+    public sealed class CityValidator : AbstractValidator<string>
     {
         public CityValidator()
         {

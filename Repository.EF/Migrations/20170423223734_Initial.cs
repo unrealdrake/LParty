@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Repository.LPBusiness.EF.Migrations
+namespace RepositoryLPBusiness.EF.Migrations
 {
     public partial class Initial : Migration
     {

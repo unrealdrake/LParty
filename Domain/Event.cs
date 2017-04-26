@@ -5,7 +5,7 @@ using SharedKernel.BaseAbstractions;
 
 namespace Domain
 {
-    public sealed class Event: EntityBase<Guid>
+    public sealed class Event: EntityBase<Guid>, IAggregateRoot
     {
         #region [PROPS]
         public DateTime DateTime { get; }
