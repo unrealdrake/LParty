@@ -5,11 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SharedKernel\SharedKernel.csproj" />
+    <PackageReference Include="FluentValidation" Version="6.4.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="FluentValidation" Version="6.4.1" />
+    <ProjectReference Include="..\SharedKernel\Core.SharedKernel.csproj" />
   </ItemGroup>
 
 </Project>

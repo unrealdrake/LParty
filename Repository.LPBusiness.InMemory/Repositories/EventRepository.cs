@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Domain;
-using Domain.Repository;
+using Core.LBPusiness.Repository;
+using Core.LPBusiness.Domain;
 
-namespace RepositoryLPBusiness.InMemory.Repositories
+namespace Repository.LPBusiness.InMemory.Repositories
 {
     public class EventRepository : IEventRepository
     {

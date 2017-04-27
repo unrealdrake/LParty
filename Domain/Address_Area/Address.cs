@@ -1,8 +1,8 @@
 ﻿using System;
-using Domain.Address_Area.Validators;
-using SharedKernel.BaseAbstractions;
+using Core.LPBusiness.Domain.Address_Area.Validators;
+using Core.SharedKernel.BaseAbstractions;
 
-namespace Domain.Address_Area
+namespace Core.LPBusiness.Domain.Address_Area
 {
     public sealed class Address : ValueObjectBase<Address>
     {

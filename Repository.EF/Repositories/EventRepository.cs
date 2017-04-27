@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Domain;
-using Domain.Attachment_Area;
-using Domain.Repository;
+using Core.LBPusiness.Repository;
+using Core.LPBusiness.Domain;
+using Core.LPBusiness.Domain.Attachment_Area;
 using Microsoft.EntityFrameworkCore;
 
-namespace RepositoryLPBusiness.EF.Repositories
+namespace Repository.LPBusiness.EF.Repositories
 {
     public sealed class EventRepository : IEventRepository
     {

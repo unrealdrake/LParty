@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 
-namespace SharedKernel.BaseAbstractions
+namespace Core.SharedKernel.BaseAbstractions
 {
     public abstract class EntityBase<IdType> : ValidatableObject, IEquatable<EntityBase<IdType>>
     {

@@ -1,6 +1,6 @@
-﻿using SharedKernel.BaseAbstractions;
+﻿using Core.SharedKernel.BaseAbstractions;
 
-namespace Domain
+namespace Core.LPBusiness.Domain
 {
     public sealed class Settings : ValueObjectBase<Settings>
     {

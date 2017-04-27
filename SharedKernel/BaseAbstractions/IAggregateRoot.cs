@@ -1,4 +1,4 @@
-﻿namespace SharedKernel.BaseAbstractions
+﻿namespace Core.SharedKernel.BaseAbstractions
 {
     public interface IAggregateRoot
     {

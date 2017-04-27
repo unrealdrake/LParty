@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using Domain.Attachment_Area;
-using SharedKernel.BaseAbstractions;
+using Core.LPBusiness.Domain.Attachment_Area;
+using Core.SharedKernel.BaseAbstractions;
 
-namespace Domain
+namespace Core.LPBusiness.Domain
 {
     public sealed class Event: EntityBase<Guid>, IAggregateRoot
     {

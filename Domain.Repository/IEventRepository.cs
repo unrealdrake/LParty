@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Core.LPBusiness.Domain;
 
-namespace Domain.Repository
+namespace Core.LBPusiness.Repository
 {
     public interface IEventRepository
     {

@@ -1,9 +1,9 @@
 ﻿using System;
-using Domain.Address_Area;
-using Domain.User_Area.Validators;
-using SharedKernel.BaseAbstractions;
+using Core.LPBusiness.Domain.Address_Area;
+using Core.LPBusiness.Domain.User_Area.Validators;
+using Core.SharedKernel.BaseAbstractions;
 
-namespace Domain.User_Area
+namespace Core.LPBusiness.Domain.User_Area
 {
     public sealed class User : EntityBase<Guid>, IAggregateRoot
     {

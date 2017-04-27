@@ -1,6 +1,6 @@
-﻿using SharedKernel.BaseAbstractions;
+﻿using Core.SharedKernel.BaseAbstractions;
 
-namespace Domain.Attachment_Area
+namespace Core.LPBusiness.Domain.Attachment_Area
 {
     public sealed class Attachment : ValueObjectBase<Attachment>
     {

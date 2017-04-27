@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SharedKernel.BaseAbstractions
+namespace Core.SharedKernel.BaseAbstractions
 {
     public abstract class ValueObjectBase<T> : ValidatableObject, IEquatable<T> where T : ValueObjectBase<T>
     {

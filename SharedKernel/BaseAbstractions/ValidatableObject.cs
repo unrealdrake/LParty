@@ -1,8 +1,8 @@
-﻿using FluentValidation;
+﻿using Core.SharedKernel.Infrastructure;
+using FluentValidation;
 using FluentValidation.Results;
-using SharedKernel.Infrastructure;
 
-namespace SharedKernel.BaseAbstractions
+namespace Core.SharedKernel.BaseAbstractions
 {
     public abstract class ValidatableObject
     {

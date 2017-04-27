@@ -2,11 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Domain;
-using Domain.Attachment_Area;
-using Domain.Repository;
+using Core.LBPusiness.Repository;
+using Core.LPBusiness.Domain;
+using Core.LPBusiness.Domain.Attachment_Area;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using RepositoryLPBusiness.InMemory.Repositories;
+using Repository.LPBusiness.InMemory.Repositories;
 
 
 namespace Tests.Repository.LPBusiness.InMemory
@@ -19,12 +19,12 @@ namespace Tests.Repository.LPBusiness.InMemory
         {
             EventRepository.FillEvents(new List<Event>()
             {
-                Event.Create(Guid.NewGuid(), DateTime.Now, new List<Attachment>()
+                Event.Create(Guid.NewGuid(), DateTime.Parse("05/05/2029"), new List<Attachment>()
                 {
                     Attachment.Create(Attachment.AttachmentType.Photo),
                     Attachment.Create(Attachment.AttachmentType.Video)
                 }),
-                Event.Create(Guid.NewGuid(), DateTime.Today, new List<Attachment>()
+                Event.Create(Guid.NewGuid(), DateTime.Parse("05/05/2030"), new List<Attachment>()
                 {
                     Attachment.Create(Attachment.AttachmentType.Photo),
                     Attachment.Create(Attachment.AttachmentType.Video)
@@ -38,7 +38,7 @@ namespace Tests.Repository.LPBusiness.InMemory
         public async Task ExpectTwoEvents()
         {
             IEventRepository eventRepository = new EventRepository();
-            Assert.IsTrue((await eventRepository.GetFromTimeAsync(DateTime.UtcNow)).Count() == 2);
+            Assert.IsTrue((await eventRepository.GetFromTimeAsync(DateTime.UtcNow)).Count()== 2);
         }
 }
 }
