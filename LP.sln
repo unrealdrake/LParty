@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.LPBusiness.InMem
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LPBusiness", "LPBusiness", "{63FA9110-F0B4-41F9-846C-CC365C5D9263}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Infrasctructure", "Shared.Infrasctructure\Shared.Infrasctructure.csproj", "{BCD76701-B58A-443A-B547-4584A5098D9F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,10 @@ Global
 		{1E1D5C1F-5463-447E-B545-CDCED209D238}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E1D5C1F-5463-447E-B545-CDCED209D238}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E1D5C1F-5463-447E-B545-CDCED209D238}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCD76701-B58A-443A-B547-4584A5098D9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCD76701-B58A-443A-B547-4584A5098D9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCD76701-B58A-443A-B547-4584A5098D9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCD76701-B58A-443A-B547-4584A5098D9F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -87,5 +93,6 @@ Global
 		{AA8F3A9C-132B-4590-9528-C7354849A248} = {90963E39-CDAD-4E48-BFAD-E08031EFEB36}
 		{1E1D5C1F-5463-447E-B545-CDCED209D238} = {63FA9110-F0B4-41F9-846C-CC365C5D9263}
 		{63FA9110-F0B4-41F9-846C-CC365C5D9263} = {EADCB106-8006-41F8-A52A-807B3BB4C607}
+		{BCD76701-B58A-443A-B547-4584A5098D9F} = {ABA022A1-7FA4-485D-8B11-1599C0F46CF5}
 	EndGlobalSection
 EndGlobal
