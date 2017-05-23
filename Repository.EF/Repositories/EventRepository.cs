@@ -11,6 +11,16 @@ namespace Repository.LPBusiness.EF.Repositories
 {
     public sealed class EventRepository : IEventRepository
     {
+        public Task CreateEventAsync(Event @event)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<Event>> GetAllAsync()
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<IEnumerable<Event>> GetFromTimeAsync(DateTime searchDateFromUtc)
         {
             using (LPBusinessContext context = new LPBusinessContext())

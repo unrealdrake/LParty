@@ -7,6 +7,7 @@ using Core.LPBusiness.Domain;
 using Core.LPBusiness.Domain.Attachment_Area;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Repository.LPBusiness.InMemory.Repositories;
+using Shared.Infrasctructure.RequestResponse;
 
 
 namespace Tests.Repository.LPBusiness.InMemory
