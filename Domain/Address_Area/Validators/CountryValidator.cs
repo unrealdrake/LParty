@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace Domain.Address_Area.Validators
+namespace LPBusiness.Domain.Address_Area.Validators
 {
     public sealed class LastNameValidator: AbstractValidator<string>
     {

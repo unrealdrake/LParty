@@ -1,6 +1,6 @@
 ﻿using SharedKernel.BaseAbstractions;
 
-namespace Domain
+namespace LPBusiness.Domain
 {
     public sealed class Settings : ValueObjectBase<Settings>
     {

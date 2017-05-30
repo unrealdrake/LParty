@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RepositoryLPBusiness.EF.DataModel
+namespace LPBusiness.Repository.EF.DataModel
 {
     public class Event
     {

@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Repository.LPBusiness.InMemory\RepositoryLPBusiness.InMemory.csproj" />
+    <ProjectReference Include="..\Repository.LPBusiness.InMemory\LPBusiness.Repository.InMemory.csproj" />
   </ItemGroup>
 
   <ItemGroup>

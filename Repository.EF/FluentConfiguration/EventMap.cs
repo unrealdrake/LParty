@@ -1,7 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
-using RepositoryLPBusiness.EF.DataModel;
+﻿using LPBusiness.Repository.EF.DataModel;
+using Microsoft.EntityFrameworkCore;
 
-namespace RepositoryLPBusiness.EF.FluentConfiguration
+namespace LPBusiness.Repository.EF.FluentConfiguration
 {
     internal sealed class EventMap
     {

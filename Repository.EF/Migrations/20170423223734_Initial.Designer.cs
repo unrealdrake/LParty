@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace RepositoryLPBusiness.EF.Migrations
+namespace LPBusiness.Repository.EF.Migrations
 {
     [DbContext(typeof(LPBusinessContext))]
     [Migration("20170423223734_Initial")]

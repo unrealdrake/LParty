@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Domain.Repository
+namespace LPBusiness.Domain.Repository
 {
     public interface IEventRepository
     {

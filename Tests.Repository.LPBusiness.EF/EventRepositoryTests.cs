@@ -2,14 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Domain;
-using Domain.Attachment_Area;
-using Domain.Repository;
+using LPBusiness.Domain;
+using LPBusiness.Domain.Attachment_Area;
+using LPBusiness.Domain.Repository;
+using LPBusiness.Repository.InMemory.Repositories;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using RepositoryLPBusiness.InMemory.Repositories;
 
-
-namespace Tests.Repository.LPBusiness.InMemory
+namespace LPBusiness.Testing.Repository.InMemory
 {
     [TestClass]
     public class EventRepositoryTests

@@ -1,5 +1,5 @@
 ﻿
-namespace RepositoryLPBusiness.EF.DataModel
+namespace LPBusiness.Repository.EF.DataModel
 {
     public class Attachment
     {

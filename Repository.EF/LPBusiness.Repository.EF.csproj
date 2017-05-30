@@ -15,8 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Domain.Repository\Domain.Repository.csproj" />
-    <ProjectReference Include="..\Domain\Domain.csproj" />
+    <ProjectReference Include="..\Domain.Repository\LPBusiness.Domain.Repository.csproj" />
+    <ProjectReference Include="..\Domain\LPBusiness.Domain.csproj" />
     <ProjectReference Include="..\Shared.Config\Shared.Config.csproj" />
   </ItemGroup>
 
