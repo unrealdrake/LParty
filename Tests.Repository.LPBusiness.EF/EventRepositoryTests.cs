@@ -7,6 +7,7 @@ using LPBusiness.Domain.Attachment_Area;
 using LPBusiness.Domain.Repository;
 using LPBusiness.Repository.InMemory.Repositories;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Shared.Infrasctructure.RequestResponse;
 
 namespace LPBusiness.Testing.Repository.InMemory
 {
@@ -18,12 +19,12 @@ namespace LPBusiness.Testing.Repository.InMemory
         {
             EventRepository.FillEvents(new List<Event>()
             {
-                Event.Create(Guid.NewGuid(), DateTime.Now, new List<Attachment>()
+                Event.Create(Guid.NewGuid(), DateTime.Parse("05/05/2029"), new List<Attachment>()
                 {
                     Attachment.Create(Attachment.AttachmentType.Photo),
                     Attachment.Create(Attachment.AttachmentType.Video)
                 }),
-                Event.Create(Guid.NewGuid(), DateTime.Today, new List<Attachment>()
+                Event.Create(Guid.NewGuid(), DateTime.Parse("05/05/2030"), new List<Attachment>()
                 {
                     Attachment.Create(Attachment.AttachmentType.Photo),
                     Attachment.Create(Attachment.AttachmentType.Video)
@@ -34,10 +35,23 @@ namespace LPBusiness.Testing.Repository.InMemory
         }
 
         [TestMethod]
-        public async Task ExpectTwoEvents()
+        public async Task FilterAndExpectTwoEvents()
         {
             IEventRepository eventRepository = new EventRepository();
             Assert.IsTrue((await eventRepository.GetFromTimeAsync(DateTime.UtcNow)).Count() == 2);
         }
-}
+
+        [TestMethod]
+        public async Task CreatesAndExpectsFiveEvents()
+        {
+            IEventRepository eventRepository = new EventRepository();
+            await eventRepository.CreateEventAsync(Event.Create(Guid.NewGuid(), DateTime.Parse("05/05/2029"),
+                new List<Attachment>()
+                {
+                        Attachment.Create(Attachment.AttachmentType.Photo),
+                        Attachment.Create(Attachment.AttachmentType.Video)
+                }));
+            Assert.IsTrue((await eventRepository.GetAllAsync()).Count() == 5);
+        }
+    }
 }

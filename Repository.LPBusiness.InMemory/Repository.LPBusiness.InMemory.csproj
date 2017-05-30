@@ -5,9 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Domain.Repository\LPBusiness.Domain.Repository.csproj" />
+    <ProjectReference Include="..\Domain.Repository\Core.LBPusiness.Repository.csproj" />
+    <ProjectReference Include="..\Domain\Core.LPBusiness.Domain.csproj" />
     <ProjectReference Include="..\Shared.Infrasctructure\Shared.Infrasctructure.csproj" />
-    <ProjectReference Include="..\SharedKernel\SharedKernel.csproj" />
+    <ProjectReference Include="..\SharedKernel\Core.SharedKernel.csproj" />
   </ItemGroup>
 
 </Project>

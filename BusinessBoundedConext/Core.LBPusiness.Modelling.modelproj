@@ -7,7 +7,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{2546ec16-d408-4fb9-bfbc-f57d54045bbd}</ProjectGuid>
     <ArchitectureToolsVersion>2.0.0.0</ArchitectureToolsVersion>
-    <Name>LPBusinessModelling</Name>
+    <Name>Core.LBPusiness.Modelling</Name>
     <RootNamespace>BusinessBoundedConext</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">

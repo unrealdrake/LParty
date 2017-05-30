@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedKernel", "SharedKerne
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LPBusiness", "LPBusiness", "{4AD69B8E-BF12-4836-A739-C4858CFC5D8F}"
 EndProject
-Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "LPBusinessModelling", "BusinessBoundedConext\LPBusinessModelling.modelproj", "{2546EC16-D408-4FB9-BFBC-F57D54045BBD}"
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "Core.LBPusiness.Modelling", "BusinessBoundedConext\Core.LBPusiness.Modelling.modelproj", "{2546EC16-D408-4FB9-BFBC-F57D54045BBD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BoundedContexts", "BoundedContexts", "{CDDF776F-743F-4585-A460-EB098141D106}"
 EndProject
@@ -30,6 +30,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repositories", "Repositories", "{24F28098-23D8-43F2-A2DF-D30164E3E2F0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{2F5173E3-A874-4B86-B3DA-EEB56781E6CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Infrasctructure", "Shared.Infrasctructure\Shared.Infrasctructure.csproj", "{BCD76701-B58A-443A-B547-4584A5098D9F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{1E1D5C1F-5463-447E-B545-CDCED209D238}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E1D5C1F-5463-447E-B545-CDCED209D238}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E1D5C1F-5463-447E-B545-CDCED209D238}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCD76701-B58A-443A-B547-4584A5098D9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCD76701-B58A-443A-B547-4584A5098D9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCD76701-B58A-443A-B547-4584A5098D9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCD76701-B58A-443A-B547-4584A5098D9F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -86,5 +92,6 @@ Global
 		{1E1D5C1F-5463-447E-B545-CDCED209D238} = {24F28098-23D8-43F2-A2DF-D30164E3E2F0}
 		{24F28098-23D8-43F2-A2DF-D30164E3E2F0} = {4AD69B8E-BF12-4836-A739-C4858CFC5D8F}
 		{2F5173E3-A874-4B86-B3DA-EEB56781E6CD} = {4AD69B8E-BF12-4836-A739-C4858CFC5D8F}
+		{BCD76701-B58A-443A-B547-4584A5098D9F} = {ABA022A1-7FA4-485D-8B11-1599C0F46CF5}
 	EndGlobalSection
 EndGlobal
