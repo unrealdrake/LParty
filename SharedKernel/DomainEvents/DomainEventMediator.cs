@@ -9,15 +9,15 @@ namespace SharedKernel.DomainEvents
         public static DomainEventMediator SingleInstance => _instance.Value;
         private DomainEventMediator() { }
 
-        private static List<IDomainEventHandler> _domainEventHandlers = new List<IDomainEventHandler>();
+        private static readonly List<IDomainEventHandler> DomainEventHandlers = new List<IDomainEventHandler>();
 
         public static void RegisterDomainEventHandler(IDomainEventHandler handler)
         {
-            _domainEventHandlers.Add(handler);
+            DomainEventHandlers.Add(handler);
         }
         public static void RaiseEvent(EventArgs eventArgs)
         {
-            foreach (var handler in _domainEventHandlers)
+            foreach (var handler in DomainEventHandlers)
             {
                 handler.Handle(eventArgs);
             }

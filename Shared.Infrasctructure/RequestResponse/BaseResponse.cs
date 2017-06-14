@@ -6,7 +6,7 @@ namespace Shared.Infrasctructure.RequestResponse
 {
     public class BaseResponse<TReturnType> : BaseResponse
     {
-        public TReturnType Result { get; set; }
+        public TReturnType Value { get; set; }
     }
 
     public class BaseResponse

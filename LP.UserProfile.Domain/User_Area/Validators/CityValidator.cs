@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace LPBusiness.Domain.Address_Area.Validators
+namespace LP.UserProfile.Domain.User_Area.Validators
 {
     public sealed class CityValidator : AbstractValidator<string>
     {
