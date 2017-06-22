@@ -1,4 +1,5 @@
-﻿using FluentValidation;
+﻿using System.Collections.Generic;
+using FluentValidation;
 using FluentValidation.Results;
 using SharedKernel.Infrastructure;
 
@@ -15,6 +16,14 @@ namespace SharedKernel.BaseAbstractions
             }
             if (!validationResult.IsValid)
                 throw new ValidatableObjectIsInvalidException(validationResult.Errors);
+        }
+
+        protected void EnsureNotNull(object objectToValidate)
+        {
+            if (objectToValidate == null)
+            {
+                throw new ValidatableObjectIsInvalidException(new List<ValidationFailure>{ new ValidationFailure("Object property", "Can not be null")});
+            }
         }
     }
 }

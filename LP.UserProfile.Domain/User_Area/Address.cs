@@ -20,7 +20,7 @@ namespace LP.UserProfile.Domain.User_Area
             this.City = city;
         }
 
-        public static Address Create(string city, string country)
+        public static Address Create(string city)
         {
             return new Address(city);
         }

@@ -8,12 +8,7 @@ namespace SharedKernel.BaseAbstractions
 
         #endregion
 
-        protected EntityBase(IdType id)
-        {
-            Id = id;
-        }
-
-        private IdType Id { get; }
+        protected IdType Id { get; set; }
 
         public override bool Equals(object entity)
         {

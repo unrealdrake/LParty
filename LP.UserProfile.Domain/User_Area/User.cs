@@ -1,26 +1,34 @@
-﻿using LP.UserProfile.Domain.User_Area.Validators;
-using SharedKernel.BaseAbstractions;
+﻿using SharedKernel.BaseAbstractions;
 
 namespace LP.UserProfile.Domain.User_Area
 {
-    public sealed class User : EntityBase<int>
+    public sealed class User : EntityBase<int>, IAggregateRoot
     {
-        private string _firstName;
-        public string FirstName
+        #region [PROPS]
+        private PersonalInformation _personalInformation;
+        public PersonalInformation PersonalInformation
         {
-            get => _firstName;
-            set { EnsureIsValid(new LastNameValidator(), value); _firstName = value; }
+            get => _personalInformation;
+            set { EnsureNotNull(value); _personalInformation = value;}
         }
 
-        private string _lastName;
-        public string LastName
+        private Address _address;
+        public Address Address
         {
-            get => _firstName;
-            set { EnsureIsValid(new LastNameValidator(), value); _lastName = value; }
+            get => _address;
+            set { EnsureNotNull(value); _address = value; }
+        }
+        #endregion
+
+        private User(PersonalInformation personalInformation, Address address)
+        {
+            PersonalInformation = personalInformation;
+            Address = address;
         }
 
-        public User(int id) : base(id)
+        public User Create(PersonalInformation personalInformation, Address address)
         {
+            return new User(personalInformation, address);
         }
     }
 }
