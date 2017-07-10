@@ -28,9 +28,12 @@ namespace LP.UserProfile.Domain.User_Area
             _lastName = lastName;
         }
 
-        public static PersonalInformation Create(string firstName, string lastName)
+        public static class Factory
         {
-            return new PersonalInformation(firstName, lastName);
+            public static PersonalInformation Create(string firstName, string lastName)
+            {
+                return new PersonalInformation(firstName, lastName);
+            }
         }
 
         public override bool Equals(PersonalInformation otherAddress)

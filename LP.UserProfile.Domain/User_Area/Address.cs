@@ -20,9 +20,12 @@ namespace LP.UserProfile.Domain.User_Area
             this.City = city;
         }
 
-        public static Address Create(string city)
+        public static class Factory
         {
-            return new Address(city);
+            public static Address Create(string city)
+            {
+                return new Address(city);
+            }
         }
 
         public override bool Equals(Address otherAddress)

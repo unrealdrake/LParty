@@ -26,9 +26,13 @@ namespace LP.UserProfile.Domain.User_Area
             Address = address;
         }
 
-        public User Create(PersonalInformation personalInformation, Address address)
+
+        public static class Factory
         {
-            return new User(personalInformation, address);
+            public static User Create(PersonalInformation personalInformation, Address address)
+            {
+                return new User(personalInformation, address);
+            }
         }
     }
 }
