@@ -19,7 +19,7 @@ namespace LP.UserProfile.Tests.EFRepository
         [TestMethod]
         public void GetUsers_NotFails()
         {
-           var s = _usersRepository.GetUsers();
+           _usersRepository.GetUsers();
         }
     }
 }

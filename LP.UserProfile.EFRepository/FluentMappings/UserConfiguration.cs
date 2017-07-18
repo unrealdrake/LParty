@@ -10,8 +10,8 @@ namespace LP.UserProfile.EFRepository.FluentMappings
         public override void Configure(EntityTypeBuilder<User> builder)
         {
             builder.ToTable("Users").HasKey(u => u.Id);
-            builder.Ignore(e => e.Address);
-            builder.Ignore(e => e.PersonalInformation);
+            builder.OwnsOne(user => user.PersonalInformation);
+            builder.HasOne(user => user.Address).WithOne(a => a.User).HasForeignKey<Address>(a => a.UserId);
         }
     }
 }

@@ -11,7 +11,7 @@ namespace LP.UserProfile.Domain.User_Area
         public string FirstName
         {
             get => _firstName;
-            set { EnsureIsValid(new LastNameValidator(), value); _firstName = value; }
+            set { EnsureIsValid(new FirstNameValidator(), value); _firstName = value; }
         }
 
         private string _lastName;

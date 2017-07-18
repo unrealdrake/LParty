@@ -20,6 +20,7 @@ namespace LP.UserProfile.EFRepository
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.AddConfiguration(new UserConfiguration());
+            modelBuilder.AddConfiguration(new AddressConfiguration());
         }
     }
 }

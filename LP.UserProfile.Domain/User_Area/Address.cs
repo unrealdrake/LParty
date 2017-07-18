@@ -6,6 +6,9 @@ namespace LP.UserProfile.Domain.User_Area
 {
     public sealed class Address : ValueObjectBase<Address>
     {
+        public int UserId { get; private set; }
+        public User User { get; set; }
+
         #region [PROPS]
         private string _city;
         public string City
@@ -14,6 +17,8 @@ namespace LP.UserProfile.Domain.User_Area
             set { EnsureIsValid(new CityValidator(), value); _city = value; }
         }
         #endregion 
+
+        private Address(){}
 
         private Address(string city)
         {

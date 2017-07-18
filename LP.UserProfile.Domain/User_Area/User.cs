@@ -1,4 +1,5 @@
-﻿using SharedKernel.BaseAbstractions;
+﻿using System;
+using SharedKernel.BaseAbstractions;
 
 namespace LP.UserProfile.Domain.User_Area
 {
@@ -23,10 +24,9 @@ namespace LP.UserProfile.Domain.User_Area
         private User(){}
         private User(PersonalInformation personalInformation, Address address)
         {
-            //PersonalInformation = personalInformation;
-            //Address = address;
+            PersonalInformation = personalInformation ?? throw new ArgumentException(nameof(personalInformation));
+            Address = address ?? throw new ArgumentException(nameof(address));
         }
-
 
         public static class Factory
         {
