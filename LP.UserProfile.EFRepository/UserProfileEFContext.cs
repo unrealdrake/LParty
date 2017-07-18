@@ -1,6 +1,8 @@
 ﻿using LP.UserProfile.Domain.User_Area;
+using LP.UserProfile.EFRepository.FluentMappings;
 using Microsoft.EntityFrameworkCore;
 using Shared.Config;
+using Shared.Infrasctructure.EntityFramework;
 
 namespace LP.UserProfile.EFRepository
 {
@@ -17,7 +19,7 @@ namespace LP.UserProfile.EFRepository
         {
             base.OnModelCreating(modelBuilder);
 
-            new UserMap(modelBuilder.Entity<User>());
+            modelBuilder.AddConfiguration(new UserConfiguration());
         }
     }
 }

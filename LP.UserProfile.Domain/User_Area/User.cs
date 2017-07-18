@@ -9,7 +9,7 @@ namespace LP.UserProfile.Domain.User_Area
         public PersonalInformation PersonalInformation
         {
             get => _personalInformation;
-            set { EnsureNotNull(value); _personalInformation = value;}
+            set { EnsureNotNull(value); _personalInformation = value; }
         }
 
         private Address _address;
@@ -20,10 +20,11 @@ namespace LP.UserProfile.Domain.User_Area
         }
         #endregion
 
+        private User(){}
         private User(PersonalInformation personalInformation, Address address)
         {
-            PersonalInformation = personalInformation;
-            Address = address;
+            //PersonalInformation = personalInformation;
+            //Address = address;
         }
 
 

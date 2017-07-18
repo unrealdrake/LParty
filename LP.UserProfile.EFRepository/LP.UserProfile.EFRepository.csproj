@@ -1,7 +1,7 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,6 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\LP.UserProfile.Domain\LP.UserProfile.Domain.csproj" />
     <ProjectReference Include="..\Shared.Config\Shared.Config.csproj" />
+    <ProjectReference Include="..\Shared.Infrasctructure\Shared.Infrasctructure.csproj" />
   </ItemGroup>
 
 </Project>

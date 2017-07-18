@@ -24,8 +24,8 @@ namespace LP.UserProfile.Domain.User_Area
 
         private PersonalInformation(string firstName, string lastName)
         {
-            _firstName = firstName;
-            _lastName = lastName;
+            FirstName = firstName;
+            LastName = lastName;
         }
 
         public static class Factory
