@@ -35,23 +35,5 @@ namespace LP.UserProfile.Domain.User_Area
                 return new PersonalInformation(firstName, lastName);
             }
         }
-
-        public override bool Equals(PersonalInformation otherAddress)
-        {
-            return this.FirstName.Equals(otherAddress.FirstName, StringComparison.OrdinalIgnoreCase)
-                && this.LastName.Equals(otherAddress.LastName, StringComparison.OrdinalIgnoreCase);
-        }
-
-        public override bool Equals(object obj)
-        {
-            if (!(obj is PersonalInformation)) return false;
-
-            return this.Equals((PersonalInformation)obj);
-        }
-
-        public override int GetHashCode()
-        {
-            return this.FirstName.GetHashCode() + this.LastName.GetHashCode();
-        }
     }
 }

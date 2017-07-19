@@ -32,22 +32,5 @@ namespace LP.UserProfile.Domain.User_Area
                 return new Address(city);
             }
         }
-
-        public override bool Equals(Address otherAddress)
-        {
-            return this.City.Equals(otherAddress.City, StringComparison.OrdinalIgnoreCase);
-        }
-
-        public override bool Equals(object obj)
-        {
-            if (!(obj is Address)) return false;
-
-            return this.Equals((Address)obj);
-        }
-
-        public override int GetHashCode()
-        {
-            return this.City.GetHashCode();
-        }
     }
 }
