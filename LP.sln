@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26621.2
+VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BoundedContexts", "BoundedContexts", "{CDDF776F-743F-4585-A460-EB098141D106}"
 EndProject
@@ -43,7 +43,15 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Database.LP", "Database.LP\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LP.UserProfile.Tests.EFRepository", "LP.UserProfile.Tests.EFRepository\LP.UserProfile.Tests.EFRepository.csproj", "{9C3E6DAC-B968-4331-A0DC-A11D514B43C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LP.UserProfile.Tests.Domain", "LP.UserProfile.Tests.Domain\LP.UserProfile.Tests.Domain.csproj", "{EEC8DB38-ED6B-4523-8ECD-ADDF35085CCC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LP.UserProfile.Tests.Domain", "LP.UserProfile.Tests.Domain\LP.UserProfile.Tests.Domain.csproj", "{EEC8DB38-ED6B-4523-8ECD-ADDF35085CCC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApplicationService", "ApplicationService", "{F70C7E2E-5108-4976-A9AB-6D5DE0ACC49E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LP.UserProfile.ApplicationService", "LP.UserProfile.ApplicationService\LP.UserProfile.ApplicationService.csproj", "{FCC6C5D5-2040-42BF-A0C9-22D034810761}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.CompositionRoot", "Shared.CompositionRoot\Shared.CompositionRoot.csproj", "{B7544365-C0AA-4AB2-8F16-480D378383AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LP.UserProfile.Repository", "LP.UserProfile.Repository\LP.UserProfile.Repository.csproj", "{BA6D3E4C-3AA0-48B4-A700-849C417BEA88}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,6 +101,18 @@ Global
 		{EEC8DB38-ED6B-4523-8ECD-ADDF35085CCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EEC8DB38-ED6B-4523-8ECD-ADDF35085CCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EEC8DB38-ED6B-4523-8ECD-ADDF35085CCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCC6C5D5-2040-42BF-A0C9-22D034810761}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCC6C5D5-2040-42BF-A0C9-22D034810761}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCC6C5D5-2040-42BF-A0C9-22D034810761}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCC6C5D5-2040-42BF-A0C9-22D034810761}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7544365-C0AA-4AB2-8F16-480D378383AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7544365-C0AA-4AB2-8F16-480D378383AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7544365-C0AA-4AB2-8F16-480D378383AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7544365-C0AA-4AB2-8F16-480D378383AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA6D3E4C-3AA0-48B4-A700-849C417BEA88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA6D3E4C-3AA0-48B4-A700-849C417BEA88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA6D3E4C-3AA0-48B4-A700-849C417BEA88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA6D3E4C-3AA0-48B4-A700-849C417BEA88}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -116,6 +136,10 @@ Global
 		{1F9E56A6-6289-40E1-87A4-221332B9889F} = {1546C495-7C7A-4D68-A6F8-1C1D060BF254}
 		{9C3E6DAC-B968-4331-A0DC-A11D514B43C6} = {C61F199E-71EC-4932-9C06-63532EF62D63}
 		{EEC8DB38-ED6B-4523-8ECD-ADDF35085CCC} = {C61F199E-71EC-4932-9C06-63532EF62D63}
+		{F70C7E2E-5108-4976-A9AB-6D5DE0ACC49E} = {FE0A0975-3B5C-4AAC-B9B7-C1FF6453DD1C}
+		{FCC6C5D5-2040-42BF-A0C9-22D034810761} = {F70C7E2E-5108-4976-A9AB-6D5DE0ACC49E}
+		{B7544365-C0AA-4AB2-8F16-480D378383AD} = {ABA022A1-7FA4-485D-8B11-1599C0F46CF5}
+		{BA6D3E4C-3AA0-48B4-A700-849C417BEA88} = {1E3C64D7-058B-4E13-8732-7B06784B3EE6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1267897C-2B68-4298-A9FE-0E65E8D2EBF7}

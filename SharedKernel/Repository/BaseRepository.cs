@@ -2,7 +2,7 @@
 
 namespace SharedKernel.Repository
 {
-    public abstract class BaseRepository<TRoot> where TRoot: IAggregateRoot
+    public interface IBaseRepository<TRoot> where TRoot: IAggregateRoot
     {
     }
 }
