@@ -8,23 +8,21 @@ namespace LP.UserProfile.Tests.EFRepository
     [TestClass]
     public class UsersRepositoryTests
     {
-        private UserProfileEFContext _context;
-        private IUserProfileRepository _usersRepository;
-        private User defaultUser;
-        private PersonalInformation defaultPersonalInformation;
-        private Address defaultAddress;
+        private static UserProfileEFContext _context;
+        private static IUserProfileRepository _usersRepository;
+        private static User defaultUser;
+        private static PersonalInformation defaultPersonalInformation;
+        private static Address defaultAddress;
 
-        [TestInitialize]
-        public void PreInitConfiguration()
+        [ClassInitialize]
+        public static void PreInitConfiguration(TestContext testContext)
         {
             _context = new UserProfileEFContext();
             _usersRepository = new UserProfileRepository(_context);
 
-            _usersRepository.ClearAll();
-
             defaultPersonalInformation = PersonalInformation.Factory.Create(firstName: "Jack", lastName: "Simon");
             defaultAddress = Address.Factory.Create(city: "London");
-            User defaultUser = User.Factory.Create(defaultPersonalInformation, defaultAddress);
+            defaultUser = User.Factory.Create(defaultPersonalInformation, defaultAddress);
         }
 
         [TestMethod]
