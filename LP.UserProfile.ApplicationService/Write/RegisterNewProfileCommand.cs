@@ -1,5 +1,4 @@
-﻿
-using LP.UserProfile.Domain.User_Area;
+﻿using LP.UserProfile.Domain.User_Area;
 using MediatR;
 
 namespace LP.UserProfile.ApplicationService.Write

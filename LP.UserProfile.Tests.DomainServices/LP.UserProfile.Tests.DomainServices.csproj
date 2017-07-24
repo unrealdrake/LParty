@@ -13,7 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LP.UserProfile.Domain\LP.UserProfile.Domain.csproj" />
+    <ProjectReference Include="..\LP.UserProfile.DomainService\LP.UserProfile.DomainService.csproj" />
+    <ProjectReference Include="..\LP.UserProfile.EFRepository\LP.UserProfile.EFRepository.csproj" />
   </ItemGroup>
 
 </Project>
