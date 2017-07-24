@@ -1,5 +1,4 @@
-﻿using System;
-using LP.UserProfile.Domain.User_Area.Validators;
+﻿using LP.UserProfile.Domain.User_Area.Validators;
 using SharedKernel.BaseAbstractions;
 
 namespace LP.UserProfile.Domain.User_Area
@@ -21,7 +20,7 @@ namespace LP.UserProfile.Domain.User_Area
             set { EnsureIsValid(new LastNameValidator(), value); _lastName = value; }
         }
         #endregion
-
+        public PersonalInformation() { }
         private PersonalInformation(string firstName, string lastName)
         {
             FirstName = firstName;

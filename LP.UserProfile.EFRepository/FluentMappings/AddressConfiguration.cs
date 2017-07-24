@@ -9,7 +9,8 @@ namespace LP.UserProfile.EFRepository.FluentMappings
     {
         public override void Configure(EntityTypeBuilder<Address> builder)
         {
-            builder.ToTable("Addresses").HasKey(a => a.Id);
+            builder.ToTable("Address").HasKey(a => a.Id);
+            builder.Property(u => u.Id).ValueGeneratedOnAdd();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿{
   "connectionStrings": {
-    "LP": "Data Source=TERYOHINI-2;Initial Catalog=LP;Integrated Security=True;TrustServerCertificate=True;"
+    "LP": "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=LP;Integrated Security=True;TrustServerCertificate=True;"
   }
 }
 

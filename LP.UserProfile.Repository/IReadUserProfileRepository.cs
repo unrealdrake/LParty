@@ -4,10 +4,8 @@ using LP.UserProfile.Domain.User_Area;
 
 namespace LP.UserProfile.Repository
 {
-    public interface IUserProfileRepository: IBaseRepository<User>
+    public interface IReadUserProfileRepository: IBaseRepository<User>
     {
-        void ClearAll();
-        void AddNewProfile(User userProfile);
         ReadOnlyCollection<User> GetAllUsers();
     }
 }

@@ -7,11 +7,11 @@ using Shared.Infrasctructure.EntityFramework;
 
 namespace LP.UserProfile.EFRepository
 {
-    public class UserProfileRepository : BaseEFRepository, IUserProfileRepository
+    public class ReadUserProfileRepository : BaseEFRepository, IReadUserProfileRepository
     {
         private readonly UserProfileEFContext _efContext;
 
-        public UserProfileRepository(UserProfileEFContext efContext) : base(efContext)
+        public ReadUserProfileRepository(UserProfileEFContext efContext) : base(efContext)
         {
             _efContext = efContext;
         }
@@ -19,18 +19,6 @@ namespace LP.UserProfile.EFRepository
         public ReadOnlyCollection<User> GetAllUsers()
         {
             return _efContext.UserProfiles.AsNoTracking().ToList().AsReadOnly();
-        }
-
-        public void ClearAll()
-        {
-            _efContext.UserProfiles.Clear();
-            _efContext.SaveChanges();
-        }
-
-        public void AddNewProfile(User userProfile)
-        {
-            _efContext.UserProfiles.Add(userProfile);
-            _efContext.SaveChanges();
         }
     }
 }

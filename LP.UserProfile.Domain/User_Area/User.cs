@@ -19,20 +19,28 @@ namespace LP.UserProfile.Domain.User_Area
             get => _address;
             set { EnsureNotNull(value); _address = value; }
         }
+
+        private LoginData _loginData;
+        public LoginData LoginData
+        {
+            get => _loginData;
+            set { EnsureNotNull(value); _loginData = value; }
+        }
         #endregion
 
         private User(){}
-        private User(PersonalInformation personalInformation, Address address)
+        private User(PersonalInformation personalInformation, Address address, LoginData loginData)
         {
             PersonalInformation = personalInformation ?? throw new ArgumentException(nameof(personalInformation));
             Address = address ?? throw new ArgumentException(nameof(address));
+            LoginData = loginData ?? throw new ArgumentException(nameof(loginData));
         }
 
         public static class Factory
         {
-            public static User Create(PersonalInformation personalInformation, Address address)
+            public static User Create(PersonalInformation personalInformation, Address address, LoginData loginData)
             {
-                return new User(personalInformation, address);
+                return new User(personalInformation, address, loginData);
             }
         }
     }

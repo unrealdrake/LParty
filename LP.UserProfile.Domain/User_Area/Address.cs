@@ -1,11 +1,11 @@
-﻿using System;
-using LP.UserProfile.Domain.User_Area.Validators;
+﻿using LP.UserProfile.Domain.User_Area.Validators;
 using SharedKernel.BaseAbstractions;
 
 namespace LP.UserProfile.Domain.User_Area
 {
     public sealed class Address : ValueObjectBase<Address>
     {
+        public int Id { get; private set; }
         public int UserId { get; private set; }
         public User User { get; set; }
 
@@ -17,8 +17,6 @@ namespace LP.UserProfile.Domain.User_Area
             set { EnsureIsValid(new CityValidator(), value); _city = value; }
         }
         #endregion 
-
-        private Address(){}
 
         private Address(string city)
         {

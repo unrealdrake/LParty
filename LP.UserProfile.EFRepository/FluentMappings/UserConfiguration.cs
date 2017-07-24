@@ -9,9 +9,14 @@ namespace LP.UserProfile.EFRepository.FluentMappings
     {
         public override void Configure(EntityTypeBuilder<User> builder)
         {
-            builder.ToTable("Users").HasKey(u => u.Id);
-            builder.OwnsOne(user => user.PersonalInformation);
-            builder.HasOne(user => user.Address).WithOne(a => a.User).HasForeignKey<Address>(a => a.UserId);
+            builder.ToTable("User").HasKey(u => u.Id);
+            builder.Property(u => u.Id).ValueGeneratedOnAdd();
+            builder.HasOne(user => user.Address).WithOne(a => a.User).HasForeignKey<Address>(a => a.UserId).OnDelete(DeleteBehavior.Cascade);
+            //PersonalInformation
+            builder.OwnsOne(user => user.PersonalInformation).Property(pi => pi.FirstName).HasColumnName("FirstName");
+            builder.OwnsOne(user => user.PersonalInformation).Property(pi => pi.LastName).HasColumnName("LastName");
+            //LoginData
+            builder.OwnsOne(user => user.LoginData).Property(pi => pi.Login).HasColumnName("Login");
         }
     }
 }
