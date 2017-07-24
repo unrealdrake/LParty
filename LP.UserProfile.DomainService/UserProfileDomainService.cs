@@ -17,7 +17,6 @@ namespace LP.UserProfile.DomainService
         {
             if (string.IsNullOrWhiteSpace(login)) { throw new ArgumentException(nameof(login));}
 
-
             return _readUserProfileRepository.GetAllUsers().Any(user => user.LoginData.Login == login);
         }
     }

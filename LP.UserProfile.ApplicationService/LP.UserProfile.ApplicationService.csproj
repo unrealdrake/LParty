@@ -9,7 +9,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\LP.UserProfile.DomainService\LP.UserProfile.DomainService.csproj" />
     <ProjectReference Include="..\LP.UserProfile.Domain\LP.UserProfile.Domain.csproj" />
+    <ProjectReference Include="..\LP.UserProfile.Repository\LP.UserProfile.Repository.csproj" />
   </ItemGroup>
 
   <ItemGroup>
