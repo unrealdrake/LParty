@@ -15,12 +15,8 @@ namespace LP.UserProfile.EFRepository
 
         public void Delete(User user)
         {
+            _efContext.Attach(user);
             _efContext.Entry(user).State = EntityState.Deleted;
-            _efContext.Entry(user).Reference(u => u.PersonalInformation).Load();
-            _efContext.Entry(user.PersonalInformation).State = EntityState.Deleted;
-            _efContext.Entry(user).Reference(u => u.LoginData).Load();
-            _efContext.Entry(user.LoginData).State = EntityState.Deleted;
-
             _efContext.SaveChanges();
         }
 
