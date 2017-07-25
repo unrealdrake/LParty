@@ -1,5 +1,5 @@
-﻿using System;
-using SharedKernel.BaseAbstractions;
+﻿using SharedKernel.BaseAbstractions;
+using Shared.Infrasctructure.ObjectExtensions;
 
 namespace LP.UserProfile.Domain.User_Area
 {
@@ -10,30 +10,30 @@ namespace LP.UserProfile.Domain.User_Area
         public PersonalInformation PersonalInformation
         {
             get => _personalInformation;
-            set { EnsureNotNull(value); _personalInformation = value; }
+            set { value.NotNull(); _personalInformation = value; }
         }
 
         private Address _address;
         public Address Address
         {
             get => _address;
-            set { EnsureNotNull(value); _address = value; }
+            set { value.NotNull(); _address = value; }
         }
 
         private LoginData _loginData;
         public LoginData LoginData
         {
             get => _loginData;
-            set { EnsureNotNull(value); _loginData = value; }
+            set { value.NotNull(); _loginData = value; }
         }
         #endregion
 
         private User(){}
         private User(PersonalInformation personalInformation, Address address, LoginData loginData)
         {
-            PersonalInformation = personalInformation ?? throw new ArgumentException(nameof(personalInformation));
-            Address = address ?? throw new ArgumentException(nameof(address));
-            LoginData = loginData ?? throw new ArgumentException(nameof(loginData));
+            PersonalInformation = personalInformation;
+            Address = address;
+            LoginData = loginData;
         }
 
         public static class Factory

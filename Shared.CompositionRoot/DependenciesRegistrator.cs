@@ -6,16 +6,11 @@ namespace Shared.CompositionRoot
 {
     public class DependenciesRegistrator
     {
-        private static Container _container = Register();
+        private static readonly Container Container = Register();
 
-        public static Container Container()
+        public static T Resolve<T>()
         {
-            if (_container == null)
-            {
-                _container = Register();
-            }
-
-            return _container;
+            return Container.GetInstance<T>();
         }
 
         public static Container Register()
@@ -24,8 +19,8 @@ namespace Shared.CompositionRoot
             {
                 MediatorBuilder.RegisterDependenciesForMediator(cfg);
 
-                cfg.For<IReadUserProfileRepository>().Use<ReadUserProfileRepository>();
-                cfg.For<IWriteUserProfileRepository>().Use<WriteUserProfileRepository>();
+                cfg.For<IReadUserProfileRepository>().Use<ReadUserProfileRepository>().Transient();
+                cfg.For<IWriteUserProfileRepository>().Use<WriteUserProfileRepository>().Transient();
             });
 
             return container;

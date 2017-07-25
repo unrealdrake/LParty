@@ -1,5 +1,4 @@
-﻿using LP.UserProfile.ApplicationService.Write;
-using LP.UserProfile.ApplicationService.Write.RegisterNewProfile;
+﻿using LP.UserProfile.ApplicationService.Write.RegisterNewProfile;
 using MediatR;
 using StructureMap;
 
@@ -27,7 +26,7 @@ namespace Shared.CompositionRoot
 
         public static IMediator BuildMediator()
         {
-            var mediator = DependenciesRegistrator.Container().GetInstance<IMediator>();
+            var mediator = DependenciesRegistrator.Resolve<IMediator>();
             return mediator;
         }
     }

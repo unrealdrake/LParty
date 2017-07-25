@@ -13,21 +13,21 @@ namespace LP.UserProfile.Tests.DomainServices
         [ClassInitialize]
         public static void PreInitConfiguration(TestContext testContext)
         {
-            _userProfileDomainService = DependenciesRegistrator.Container().GetInstance<UserProfileDomainService>();
+            _userProfileDomainService = DependenciesRegistrator.Resolve<UserProfileDomainService>();
         }
 
         [ExpectedException(typeof(ArgumentException))]
         [TestMethod]
         public void CheckAlreadyExistsEmptyLogin()
         {
-            _userProfileDomainService.IsAlreadyExists("");
+            _userProfileDomainService.IsAlreadyExist("");
         }
 
         [ExpectedException(typeof(ArgumentException))]
         [TestMethod]
         public void CheckAlreadyExistsNullLogin()
         {
-            _userProfileDomainService.IsAlreadyExists(null);
+            _userProfileDomainService.IsAlreadyExist(null);
         }
     }
 }

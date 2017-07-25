@@ -17,7 +17,7 @@ namespace LP.UserProfile.ApplicationService.Write.RegisterNewProfile
 
         public bool Handle(RegisterNewProfileCommand message)
         {
-            if (!_userProfileDomainService.IsAlreadyExists(message.UserProfile.LoginData.Login))
+            if (!_userProfileDomainService.IsAlreadyExist(message.UserProfile.LoginData.Login))
             {
                 _writeUserProfileRepository.AddNewProfile(message.UserProfile);
                 return true;

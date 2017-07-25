@@ -18,8 +18,7 @@ namespace LP.UserProfile.Tests.EFRepository
         [ClassInitialize]
         public static void PreInitConfiguration(TestContext testContext)
         {
-            var container = DependenciesRegistrator.Container();
-            _writeUsersRepository = container.GetInstance<IWriteUserProfileRepository>();
+            _writeUsersRepository = DependenciesRegistrator.Resolve<IWriteUserProfileRepository>();
 
             defaultPersonalInformation = PersonalInformation.Factory.Create(firstName: "Jack", lastName: "Simon");
             defaultAddress = Address.Factory.Create(city: "London");

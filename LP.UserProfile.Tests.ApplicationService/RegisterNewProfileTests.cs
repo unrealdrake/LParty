@@ -1,4 +1,3 @@
-
 using LP.UserProfile.ApplicationService.Write.RegisterNewProfile;
 using LP.UserProfile.Domain.User_Area;
 using MediatR;

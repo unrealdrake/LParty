@@ -1,6 +1,6 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using LP.UserProfile.Repository;
+using Shared.Infrasctructure.ObjectExtensions;
 
 namespace LP.UserProfile.DomainService
 {
@@ -13,9 +13,9 @@ namespace LP.UserProfile.DomainService
             this._readUserProfileRepository = readUserProfileRepository;
         }
 
-        public bool IsAlreadyExists(string login)
+        public bool IsAlreadyExist(string login)
         {
-            if (string.IsNullOrWhiteSpace(login)) { throw new ArgumentException(nameof(login));}
+            login.NotNullOrEmpty();
 
             return _readUserProfileRepository.GetAllUsers().Any(user => user.LoginData.Login == login);
         }
