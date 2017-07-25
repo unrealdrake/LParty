@@ -1,4 +1,5 @@
 ﻿using LP.UserProfile.ApplicationService.Write;
+using LP.UserProfile.ApplicationService.Write.RegisterNewProfile;
 using MediatR;
 using StructureMap;
 
@@ -6,27 +7,27 @@ namespace Shared.CompositionRoot
 {
     public class MediatorBuilder
     {
-        private static IMediator BuildMediator()
+        public static void RegisterDependenciesForMediator(ConfigurationExpression cfg)
         {
-            var container = new Container(cfg =>
+            cfg.Scan(scanner =>
             {
-                cfg.Scan(scanner =>
-                {
-                    scanner.AssemblyContainingType<RegisterNewProfileCommand>(); // Our assembly with requests & handlers
+                scanner.AssemblyContainingType<RegisterNewProfileCommand>(); // Our assembly with requests & handlers
 
-                    scanner.ConnectImplementationsToTypesClosing(typeof(IRequestHandler<>)); // Handlers with no response
-                    scanner.ConnectImplementationsToTypesClosing(typeof(IRequestHandler<,>)); // Handlers with a response
-                    scanner.ConnectImplementationsToTypesClosing(typeof(IAsyncRequestHandler<>)); // Async handlers with no response
-                    scanner.ConnectImplementationsToTypesClosing(typeof(IAsyncRequestHandler<,>)); // Async Handlers with a response
-                    scanner.ConnectImplementationsToTypesClosing(typeof(INotificationHandler<>));
-                    scanner.ConnectImplementationsToTypesClosing(typeof(IAsyncNotificationHandler<>));
-                });
-                cfg.For<SingleInstanceFactory>().Use<SingleInstanceFactory>(ctx => t => ctx.GetInstance(t));
-                cfg.For<MultiInstanceFactory>().Use<MultiInstanceFactory>(ctx => t => ctx.GetAllInstances(t));
-                cfg.For<IMediator>().Use<Mediator>();
+                scanner.ConnectImplementationsToTypesClosing(typeof(IRequestHandler<>)); // Handlers with no response
+                scanner.ConnectImplementationsToTypesClosing(typeof(IRequestHandler<,>)); // Handlers with a response
+                scanner.ConnectImplementationsToTypesClosing(typeof(IAsyncRequestHandler<>)); // Async handlers with no response
+                scanner.ConnectImplementationsToTypesClosing(typeof(IAsyncRequestHandler<,>)); // Async Handlers with a response
+                scanner.ConnectImplementationsToTypesClosing(typeof(INotificationHandler<>));
+                scanner.ConnectImplementationsToTypesClosing(typeof(IAsyncNotificationHandler<>));
             });
-            var mediator = container.GetInstance<IMediator>();
+            cfg.For<SingleInstanceFactory>().Use<SingleInstanceFactory>(ctx => t => ctx.GetInstance(t));
+            cfg.For<MultiInstanceFactory>().Use<MultiInstanceFactory>(ctx => t => ctx.GetAllInstances(t));
+            cfg.For<IMediator>().Use<Mediator>();
+        }
 
+        public static IMediator BuildMediator()
+        {
+            var mediator = DependenciesRegistrator.Container().GetInstance<IMediator>();
             return mediator;
         }
     }

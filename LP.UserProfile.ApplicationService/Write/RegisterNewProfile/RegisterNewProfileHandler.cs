@@ -1,9 +1,8 @@
-﻿using System;
+﻿using LP.UserProfile.DomainService;
 using LP.UserProfile.Repository;
 using MediatR;
-using LP.UserProfile.DomainService;
 
-namespace LP.UserProfile.ApplicationService.Write
+namespace LP.UserProfile.ApplicationService.Write.RegisterNewProfile
 {
     public class RegisterNewProfileHandler : IRequestHandler<RegisterNewProfileCommand, bool>
     {

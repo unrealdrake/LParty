@@ -1,24 +1,19 @@
 using System;
-using LP.UserProfile.EFRepository;
-using LP.UserProfile.Repository;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using LP.UserProfile.DomainService;
+using Shared.CompositionRoot;
 
 namespace LP.UserProfile.Tests.DomainServices
 {
     [TestClass]
     public class UserProfileDomainServicesTests
     {
-        private static UserProfileEFContext _context;
-        private static IReadUserProfileRepository _readUsersRepository;
         private static UserProfileDomainService _userProfileDomainService;
 
         [ClassInitialize]
         public static void PreInitConfiguration(TestContext testContext)
         {
-            _context = new UserProfileEFContext();
-            _readUsersRepository = new ReadUserProfileRepository(_context);
-            _userProfileDomainService = new UserProfileDomainService(_readUsersRepository);
+            _userProfileDomainService = DependenciesRegistrator.Container().GetInstance<UserProfileDomainService>();
         }
 
         [ExpectedException(typeof(ArgumentException))]

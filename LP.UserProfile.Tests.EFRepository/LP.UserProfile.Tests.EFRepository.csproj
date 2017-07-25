@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LP.UserProfile.EFRepository\LP.UserProfile.EFRepository.csproj" />
+    <ProjectReference Include="..\Shared.CompositionRoot\Shared.CompositionRoot.csproj" />
   </ItemGroup>
 
   <ItemGroup>

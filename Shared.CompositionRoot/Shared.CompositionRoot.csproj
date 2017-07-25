@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LP.UserProfile.ApplicationService\LP.UserProfile.ApplicationService.csproj" />
+    <ProjectReference Include="..\LP.UserProfile.EFRepository\LP.UserProfile.EFRepository.csproj" />
   </ItemGroup>
 
 </Project>
