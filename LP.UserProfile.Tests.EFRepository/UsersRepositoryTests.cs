@@ -1,5 +1,6 @@
 using LP.UserProfile.Domain.User_Area;
 using LP.UserProfile.Repository;
+using LP.UserProfile.Tests.Shared;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shared.CompositionRoot;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Linq;
 namespace LP.UserProfile.Tests.EFRepository
 {
     [TestClass]
-    public class UsersRepositoryTests
+    public class UsersRepositoryTests: BaseTestClass
     {
         private static IWriteUserProfileRepository _writeUsersRepository;
         private static User defaultUser;
@@ -18,6 +19,8 @@ namespace LP.UserProfile.Tests.EFRepository
         [ClassInitialize]
         public static void PreInitConfiguration(TestContext testContext)
         {
+            SetTestSettings();
+
             _writeUsersRepository = DependenciesRegistrator.Resolve<IWriteUserProfileRepository>();
 
             defaultPersonalInformation = PersonalInformation.Factory.Create(firstName: "Jack", lastName: "Simon");

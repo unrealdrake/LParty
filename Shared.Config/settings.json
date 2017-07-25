@@ -1,6 +1,7 @@
 ﻿{
   "connectionStrings": {
-    "LP": "Data Source=TERYOHINI-2;Initial Catalog=LP;Integrated Security=True;TrustServerCertificate=True;"
+    "LP": "Data Source=TERYOHINI-2;Initial Catalog=LP;Integrated Security=True;TrustServerCertificate=True;",
+    "LP_Testing": "Data Source=TERYOHINI-2;Initial Catalog=LP_Testing;Integrated Security=True;TrustServerCertificate=True;"
   }
 }
 

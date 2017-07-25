@@ -6,6 +6,8 @@ namespace Shared.CompositionRoot
 {
     public class DependenciesRegistrator
     {
+        public static SettingsForDependencies Settings = new SettingsForDependencies();
+
         private static readonly Container Container = Register();
 
         public static T Resolve<T>()
@@ -21,6 +23,7 @@ namespace Shared.CompositionRoot
 
                 cfg.For<IReadUserProfileRepository>().Use<ReadUserProfileRepository>().Transient();
                 cfg.For<IWriteUserProfileRepository>().Use<WriteUserProfileRepository>().Transient();
+                cfg.For<UserProfileEFContext>().Use(ctx => new UserProfileEFContext(Settings.ConnectionString));
             });
 
             return container;

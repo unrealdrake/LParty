@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26621.2
+VisualStudioVersion = 15.0.26711.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BoundedContexts", "BoundedContexts", "{CDDF776F-743F-4585-A460-EB098141D106}"
 EndProject
@@ -59,7 +59,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LP.UserProfile.DomainServic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LP.UserProfile.Tests.DomainServices", "LP.UserProfile.Tests.DomainServices\LP.UserProfile.Tests.DomainServices.csproj", "{63922583-9406-43FC-AB75-A2D6AB22285C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LP.UserProfile.Tests.ApplicationService", "LP.UserProfile.Tests.ApplicationService\LP.UserProfile.Tests.ApplicationService.csproj", "{E8E3FF1F-A862-4526-8F05-E33FCC785D7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LP.UserProfile.Tests.ApplicationService", "LP.UserProfile.Tests.ApplicationService\LP.UserProfile.Tests.ApplicationService.csproj", "{E8E3FF1F-A862-4526-8F05-E33FCC785D7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LP.UserProfile.Tests.Shared", "LP.UserProfile.Tests.Shared\LP.UserProfile.Tests.Shared.csproj", "{7AB2F419-A61A-4A57-B0E3-05BFE319B254}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -133,6 +135,10 @@ Global
 		{E8E3FF1F-A862-4526-8F05-E33FCC785D7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8E3FF1F-A862-4526-8F05-E33FCC785D7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8E3FF1F-A862-4526-8F05-E33FCC785D7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AB2F419-A61A-4A57-B0E3-05BFE319B254}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AB2F419-A61A-4A57-B0E3-05BFE319B254}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AB2F419-A61A-4A57-B0E3-05BFE319B254}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AB2F419-A61A-4A57-B0E3-05BFE319B254}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -164,6 +170,7 @@ Global
 		{014B593A-34BE-469F-B3D9-A9F06C7C3FA4} = {0605955E-460D-4F6B-B189-81D361B726B8}
 		{63922583-9406-43FC-AB75-A2D6AB22285C} = {C61F199E-71EC-4932-9C06-63532EF62D63}
 		{E8E3FF1F-A862-4526-8F05-E33FCC785D7A} = {C61F199E-71EC-4932-9C06-63532EF62D63}
+		{7AB2F419-A61A-4A57-B0E3-05BFE319B254} = {C61F199E-71EC-4932-9C06-63532EF62D63}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1267897C-2B68-4298-A9FE-0E65E8D2EBF7}
