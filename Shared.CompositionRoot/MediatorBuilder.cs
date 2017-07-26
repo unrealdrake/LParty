@@ -19,8 +19,8 @@ namespace Shared.CompositionRoot
                 scanner.ConnectImplementationsToTypesClosing(typeof(INotificationHandler<>));
                 scanner.ConnectImplementationsToTypesClosing(typeof(IAsyncNotificationHandler<>));
             });
-            cfg.For<SingleInstanceFactory>().Use<SingleInstanceFactory>(ctx => t => ctx.GetInstance(t));
-            cfg.For<MultiInstanceFactory>().Use<MultiInstanceFactory>(ctx => t => ctx.GetAllInstances(t));
+            cfg.For<SingleInstanceFactory>().Use<SingleInstanceFactory>(ctx => ctx.GetInstance);
+            cfg.For<MultiInstanceFactory>().Use<MultiInstanceFactory>(ctx => ctx.GetAllInstances);
             cfg.For<IMediator>().Use<Mediator>();
         }
 
