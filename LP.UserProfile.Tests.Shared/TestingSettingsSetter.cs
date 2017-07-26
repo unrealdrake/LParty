@@ -9,6 +9,5 @@ namespace LP.UserProfile.Tests.Shared
         {
             DependenciesRegistrator.Settings.ConnectionString = ConnectionStringFactory.Create(useTestConnectionString: true);
         }
-
     }
 }

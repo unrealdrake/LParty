@@ -1,5 +1,6 @@
 using LP.UserProfile.ApplicationService.Write.RegisterNewProfile;
 using LP.UserProfile.Domain.User_Area;
+using LP.UserProfile.Tests.Shared;
 using MediatR;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shared.CompositionRoot;
@@ -7,7 +8,7 @@ using Shared.CompositionRoot;
 namespace LP.UserProfile.Tests.ApplicationService
 {
     [TestClass]
-    public class RegisterNewProfileTests
+    public class RegisterNewProfileTests : BaseTestClass
     {
         private static IMediator _mediator;
         private readonly Address _defaultAddress = Address.Factory.Create("London");
@@ -17,8 +18,8 @@ namespace LP.UserProfile.Tests.ApplicationService
         [ClassInitialize]
         public static void PreInitConfiguration(TestContext testContext)
         {
+            SetTestSettings();
             _mediator = MediatorBuilder.BuildMediator();
-
         }
 
         [TestMethod]
