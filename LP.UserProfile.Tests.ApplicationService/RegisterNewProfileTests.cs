@@ -4,6 +4,7 @@ using LP.UserProfile.Tests.Shared;
 using MediatR;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shared.CompositionRoot;
+using System.Threading.Tasks;
 
 namespace LP.UserProfile.Tests.ApplicationService
 {
@@ -23,10 +24,10 @@ namespace LP.UserProfile.Tests.ApplicationService
         }
 
         [TestMethod]
-        public void Handle()
+        public async Task Handle()
         {
             var user = User.Factory.Create(_personalInformation, _defaultAddress, _loginData);
-            var response = _mediator.Send(new RegisterNewProfileCommand(user)).Result;
+            var response = await _mediator.Send(new RegisterNewProfileCommand(user));
         }
     }
 }
