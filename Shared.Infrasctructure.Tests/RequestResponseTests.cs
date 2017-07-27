@@ -1,6 +1,4 @@
-using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Shared.Infrasctructure.ObjectExtensions;
 using Shared.Infrasctructure.RequestResponse;
 
 namespace Shared.Infrasctructure.Tests

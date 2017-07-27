@@ -1,6 +1,6 @@
 ﻿using System.Collections.ObjectModel;
-using SharedKernel.Repository;
 using LP.UserProfile.Domain.User_Area;
+using SharedKernel.BaseAbstractions.Repository;
 
 namespace LP.UserProfile.Repository
 {
