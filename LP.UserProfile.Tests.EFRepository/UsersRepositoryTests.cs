@@ -10,6 +10,7 @@ namespace LP.UserProfile.Tests.EFRepository
     [TestClass]
     public class UsersRepositoryTests: BaseTestClass
     {
+        private static IReadUserProfileRepository _readUsersRepository;
         private static IWriteUserProfileRepository _writeUsersRepository;
         private static User defaultUser;
         private static PersonalInformation defaultPersonalInformation;
@@ -21,6 +22,7 @@ namespace LP.UserProfile.Tests.EFRepository
         {
             SetTestSettings();
 
+            _readUsersRepository = DependenciesRegistrator.Resolve<IReadUserProfileRepository>();
             _writeUsersRepository = DependenciesRegistrator.Resolve<IWriteUserProfileRepository>();
 
             defaultPersonalInformation = PersonalInformation.Factory.Create(firstName: "Jack", lastName: "Simon");
@@ -32,28 +34,28 @@ namespace LP.UserProfile.Tests.EFRepository
         [TestMethod]
         public void GetUsers_NotFails()
         {
-            _writeUsersRepository.GetAllUsers();
+            _readUsersRepository.GetAllUsers();
         }
 
         [TestMethod]
         public void AddNewUser_NotFails()
         {
-            int allUsersCount = _writeUsersRepository.GetAllUsers().Count();
+            int allUsersCount = _readUsersRepository.GetAllUsers().Count();
             _writeUsersRepository.AddNewProfile(defaultUser);
-            int allUsersCountAfterSaving = _writeUsersRepository.GetAllUsers().Count();
+            int allUsersCountAfterSaving = _readUsersRepository.GetAllUsers().Count();
             Assert.AreEqual(allUsersCount + 1, allUsersCountAfterSaving);
         }
 
         [TestMethod]
         public void DeleteExistingUser_NotFails()
         {
-            var existingUser = _writeUsersRepository.GetAllUsers().FirstOrDefault();
-            int allUsersCount = _writeUsersRepository.GetAllUsers().Count();
+            var existingUser = _readUsersRepository.GetAllUsers().FirstOrDefault();
+            int allUsersCount = _readUsersRepository.GetAllUsers().Count();
             if (existingUser != null)
             {
                 _writeUsersRepository.Delete(existingUser);
             }
-            int allUsersCountAfterSaving = _writeUsersRepository.GetAllUsers().Count();
+            int allUsersCountAfterSaving = _readUsersRepository.GetAllUsers().Count();
             Assert.AreEqual(allUsersCount - 1, allUsersCountAfterSaving);
         }
     }
