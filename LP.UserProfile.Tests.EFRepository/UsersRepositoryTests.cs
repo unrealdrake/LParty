@@ -56,11 +56,5 @@ namespace LP.UserProfile.Tests.EFRepository
             int allUsersCountAfterSaving = _writeUsersRepository.GetAllUsers().Count();
             Assert.AreEqual(allUsersCount - 1, allUsersCountAfterSaving);
         }
-
-        [TestCleanup]
-        public void CleanDatabse()
-        {
-            
-        }
     }
 }
