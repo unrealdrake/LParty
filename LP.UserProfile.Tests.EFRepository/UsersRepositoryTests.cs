@@ -1,9 +1,9 @@
-using LP.UserProfile.Domain.User_Area;
-using LP.UserProfile.Repository;
 using LP.UserProfile.Tests.Shared;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shared.CompositionRoot;
 using System.Linq;
+using LP.UserProfile.Domain.User_Area.Core;
+using LP.UserProfile.Domain.User_Area.Repositories;
 
 namespace LP.UserProfile.Tests.EFRepository
 {

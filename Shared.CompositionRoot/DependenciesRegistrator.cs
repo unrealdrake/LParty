@@ -1,5 +1,5 @@
-﻿using LP.UserProfile.EFRepository;
-using LP.UserProfile.Repository;
+﻿using LP.UserProfile.Domain.User_Area.Repositories;
+using LP.UserProfile.EFRepository;
 using StructureMap;
 
 namespace Shared.CompositionRoot

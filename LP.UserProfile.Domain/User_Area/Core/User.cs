@@ -1,7 +1,7 @@
-﻿using SharedKernel.BaseAbstractions;
-using Shared.Infrasctructure.ObjectExtensions;
+﻿using Shared.Infrasctructure.ObjectExtensions;
+using SharedKernel.BaseAbstractions;
 
-namespace LP.UserProfile.Domain.User_Area
+namespace LP.UserProfile.Domain.User_Area.Core
 {
     public sealed class User : EntityBase<int>, IAggregateRoot
     {

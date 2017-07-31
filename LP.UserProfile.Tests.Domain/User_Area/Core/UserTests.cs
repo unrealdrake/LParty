@@ -1,8 +1,8 @@
 using System;
+using LP.UserProfile.Domain.User_Area.Core;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using LP.UserProfile.Domain.User_Area;
 
-namespace LP.UserProfile.Tests.Domain.User_Area
+namespace LP.UserProfile.Tests.Domain.User_Area.Core
 {
     [TestClass]
     public class UserTests

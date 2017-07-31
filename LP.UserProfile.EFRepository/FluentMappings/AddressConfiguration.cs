@@ -1,4 +1,5 @@
 ﻿using LP.UserProfile.Domain.User_Area;
+using LP.UserProfile.Domain.User_Area.Core;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Shared.Infrasctructure.EntityFramework;

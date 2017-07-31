@@ -1,8 +1,8 @@
 ﻿using System.Linq;
-using LP.UserProfile.Repository;
+using LP.UserProfile.Domain.User_Area.Repositories;
 using Shared.Infrasctructure.ObjectExtensions;
 
-namespace LP.UserProfile.DomainService
+namespace LP.UserProfile.Domain.User_Area.DomainServices
 {
     public sealed class UserProfileDomainService
     {

@@ -1,12 +1,12 @@
 using System;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using LP.UserProfile.DomainService;
-using LP.UserProfile.Repository;
-using Shared.CompositionRoot;
+using LP.UserProfile.Domain.User_Area.DomainServices;
+using LP.UserProfile.Domain.User_Area.Repositories;
 using LP.UserProfile.Tests.Shared;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Shared.CompositionRoot;
 
-namespace LP.UserProfile.Tests.DomainServices
+namespace LP.UserProfile.Tests.Domain.User_Area.DomainServices
 {
     [TestClass]
     public class UserProfileDomainServicesTests : BaseTestClass

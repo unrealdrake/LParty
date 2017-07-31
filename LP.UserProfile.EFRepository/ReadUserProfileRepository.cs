@@ -1,7 +1,8 @@
 ﻿using System.Collections.ObjectModel;
 using System.Linq;
-using LP.UserProfile.Repository;
 using LP.UserProfile.Domain.User_Area;
+using LP.UserProfile.Domain.User_Area.Core;
+using LP.UserProfile.Domain.User_Area.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Shared.Infrasctructure.EntityFramework;
 

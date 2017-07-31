@@ -1,7 +1,7 @@
-﻿using LP.UserProfile.Domain.User_Area.Validators;
+﻿using LP.UserProfile.Domain.User_Area.Core.Validators;
 using SharedKernel.BaseAbstractions;
 
-namespace LP.UserProfile.Domain.User_Area
+namespace LP.UserProfile.Domain.User_Area.Core
 {
     public sealed class PersonalInformation: ValueObjectBase<PersonalInformation>
     {

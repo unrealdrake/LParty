@@ -1,5 +1,5 @@
-﻿using LP.UserProfile.DomainService;
-using LP.UserProfile.Repository;
+﻿using LP.UserProfile.Domain.User_Area.DomainServices;
+using LP.UserProfile.Domain.User_Area.Repositories;
 using MediatR;
 
 namespace LP.UserProfile.ApplicationService.Write.RegisterNewProfile

@@ -1,8 +1,8 @@
-﻿using LP.UserProfile.Domain.User_Area;
+﻿using LP.UserProfile.Domain.User_Area.Core;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SharedKernel.Infrastructure;
 
-namespace LP.UserProfile.Tests.Domain.User_Area
+namespace LP.UserProfile.Tests.Domain.User_Area.Core
 {
     [TestClass]
     public class PersonalInformationTests
