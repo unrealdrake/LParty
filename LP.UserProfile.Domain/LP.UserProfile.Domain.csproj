@@ -9,4 +9,8 @@
     <ProjectReference Include="..\SharedKernel\SharedKernel.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="User_Area\DomainEvents\" />
+  </ItemGroup>
+
 </Project>
