@@ -22,8 +22,8 @@ namespace LP.UserProfile.Tests.EFRepository
         {
             SetTestSettings();
 
-            _readUsersRepository = DependenciesRegistrator.Resolve<IReadUserProfileRepository>();
-            _writeUsersRepository = DependenciesRegistrator.Resolve<IWriteUserProfileRepository>();
+            _readUsersRepository = ResolverRoot.Resolve<IReadUserProfileRepository>();
+            _writeUsersRepository = ResolverRoot.Resolve<IWriteUserProfileRepository>();
 
             defaultPersonalInformation = PersonalInformation.Factory.Create(firstName: "Jack", lastName: "Simon");
             defaultAddress = Address.Factory.Create(city: "London");

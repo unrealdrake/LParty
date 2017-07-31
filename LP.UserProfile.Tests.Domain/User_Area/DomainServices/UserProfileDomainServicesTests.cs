@@ -18,8 +18,8 @@ namespace LP.UserProfile.Tests.Domain.User_Area.DomainServices
         public static void PreInitConfiguration(TestContext testContext)
         {
             SetTestSettings();
-            _userProfileDomainService = DependenciesRegistrator.Resolve<UserProfileDomainService>();
-            _readUserProfileRepository = DependenciesRegistrator.Resolve<IReadUserProfileRepository>();
+            _userProfileDomainService = ResolverRoot.Resolve<UserProfileDomainService>();
+            _readUserProfileRepository = ResolverRoot.Resolve<IReadUserProfileRepository>();
         }
 
         [ExpectedException(typeof(ArgumentException))]

@@ -6,10 +6,15 @@ namespace Shared.CompositionRoot
     public class ResolverRoot
     {
         private static readonly DependenciesRegistrator Resolver;
-        public static SettingsForDependencies Settings { }
+
+        public static SettingsForDependencies Settings
+        {
+            get => DependenciesRegistrator.Settings;
+            set => DependenciesRegistrator.Settings = value;
+        }
+
         static ResolverRoot()
         {
-            Settings = DependenciesRegistrator.Settings;
             Resolver = new DependenciesRegistrator();
             DomainEvents.ObligatedResolver = Resolver;
         }
