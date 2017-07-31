@@ -1,9 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SharedKernel.BaseAbstractions;
 
 namespace Shared.Infrasctructure.EntityFramework
 {
-    public abstract class BaseWriteEFRepository<TRoot> : BaseEFRepository where TRoot : class, IAggregateRoot 
+    public abstract class BaseWriteEFRepository<TRoot> : BaseEFRepository where TRoot : class
     {
         protected BaseWriteEFRepository(DbContext context) : base(context)
         {

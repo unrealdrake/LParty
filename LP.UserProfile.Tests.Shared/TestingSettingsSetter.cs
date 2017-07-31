@@ -7,7 +7,7 @@ namespace LP.UserProfile.Tests.Shared
     {
         protected static void SetTestSettings()
         {
-            DependenciesRegistrator.Settings.ConnectionString = ConnectionStringFactory.Create(useTestConnectionString: true);
+            ResolverRoot.Settings.ConnectionString = ConnectionStringFactory.Create(useTestConnectionString: true);
         }
     }
 }

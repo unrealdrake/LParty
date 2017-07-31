@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Shared.Config\Shared.Config.csproj" />
-    <ProjectReference Include="..\SharedKernel\SharedKernel.csproj" />
   </ItemGroup>
 
 </Project>

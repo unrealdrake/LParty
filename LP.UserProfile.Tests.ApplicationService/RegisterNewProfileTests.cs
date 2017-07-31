@@ -24,7 +24,7 @@ namespace LP.UserProfile.Tests.ApplicationService
         {
             SetTestSettings();
             _mediator = MediatorBuilder.BuildMediator();
-            _readUserProfileRepository = DependenciesRegistrator.Resolve<IReadUserProfileRepository>();
+            _readUserProfileRepository = ResolverRoot.Resolve<IReadUserProfileRepository>();
         }
 
         [TestMethod]

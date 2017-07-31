@@ -26,7 +26,7 @@ namespace Shared.CompositionRoot
 
         public static IMediator BuildMediator()
         {
-            var mediator = DependenciesRegistrator.Resolve<IMediator>();
+            var mediator = ResolverRoot.Resolve<IMediator>();
             return mediator;
         }
     }

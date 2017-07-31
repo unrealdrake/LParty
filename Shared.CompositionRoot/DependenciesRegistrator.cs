@@ -1,16 +1,18 @@
-﻿using LP.UserProfile.Domain.User_Area.Repositories;
+﻿using System.Collections.Generic;
+using LP.UserProfile.Domain.User_Area.Repositories;
 using LP.UserProfile.EFRepository;
+using SharedKernel.DomainEvents;
 using StructureMap;
 
 namespace Shared.CompositionRoot
 {
-    public class DependenciesRegistrator
+    internal class DependenciesRegistrator : ICorrelatedResolverObligation
     {
         public static SettingsForDependencies Settings = new SettingsForDependencies();
 
         private static readonly Container Container = Register();
 
-        public static T Resolve<T>()
+        public T Resolve<T>()
         {
             return Container.GetInstance<T>();
         }
@@ -27,6 +29,11 @@ namespace Shared.CompositionRoot
             });
 
             return container;
+        }
+
+        public IEnumerable<IHandles<T>> ResolveAll<T>() where T : IDomainEvent
+        {
+            return Container.GetAllInstances<IHandles<T>>();
         }
     }
 }
