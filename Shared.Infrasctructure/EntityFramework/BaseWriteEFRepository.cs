@@ -2,17 +2,10 @@
 
 namespace Shared.Infrasctructure.EntityFramework
 {
-    public abstract class BaseWriteEFRepository<TRoot> : BaseEFRepository where TRoot : class
+    public abstract class BaseWriteEFRepository<TRoot> : BaseReadEFRepository where TRoot : class
     {
         protected BaseWriteEFRepository(DbContext context) : base(context)
         {
-        }
-
-        public void Delete(TRoot entity)
-        {
-            Context.Attach(entity);
-            Context.Entry(entity).State = EntityState.Deleted;
-            Context.SaveChanges();
         }
 
         public void Add(TRoot entity)

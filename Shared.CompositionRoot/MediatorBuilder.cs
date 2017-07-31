@@ -1,5 +1,7 @@
 ﻿using LP.UserProfile.ApplicationService.Write.RegisterNewProfile;
+using LP.UserProfile.Domain.User_Area.Events;
 using MediatR;
+using SharedKernel.DomainEvents;
 using StructureMap;
 
 namespace Shared.CompositionRoot
@@ -11,7 +13,9 @@ namespace Shared.CompositionRoot
             cfg.Scan(scanner =>
             {
                 scanner.AssemblyContainingType<RegisterNewProfileCommand>(); // Our assembly with requests & handlers
+                scanner.AssemblyContainingType<UserProfileCreatedEvent>();
 
+                scanner.ConnectImplementationsToTypesClosing(typeof(IHandles<>));
                 scanner.ConnectImplementationsToTypesClosing(typeof(IRequestHandler<>)); // Handlers with no response
                 scanner.ConnectImplementationsToTypesClosing(typeof(IRequestHandler<,>)); // Handlers with a response
                 scanner.ConnectImplementationsToTypesClosing(typeof(IAsyncRequestHandler<>)); // Async handlers with no response

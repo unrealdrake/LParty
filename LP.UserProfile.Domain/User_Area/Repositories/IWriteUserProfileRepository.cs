@@ -7,5 +7,6 @@ namespace LP.UserProfile.Domain.User_Area.Repositories
     {
         void Delete(User user);
         void AddNewProfile(User userProfile);
+        void ClearAll();
     }
 }

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Shared.Infrasctructure.EntityFramework
 {
-    public abstract class BaseEFRepository: IDisposable
+    public abstract class BaseEFRepository : IDisposable
     {
         protected readonly DbContext Context;
 
