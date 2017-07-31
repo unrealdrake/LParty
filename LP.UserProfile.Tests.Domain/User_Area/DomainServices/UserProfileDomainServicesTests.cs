@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using LP.UserProfile.Domain.User_Area.Core;
 using LP.UserProfile.Domain.User_Area.DomainServices;
 using LP.UserProfile.Domain.User_Area.Repositories;
 using LP.UserProfile.Tests.Shared;
@@ -47,5 +48,11 @@ namespace LP.UserProfile.Tests.Domain.User_Area.DomainServices
                 Assert.IsTrue(_userProfileDomainService.IsAlreadyExist(user.LoginData.Login));
             }
         }
+
+        //[TestMethod]
+        //public void UserProfileCreatedEventRaised()
+        //{
+        //    _userProfileDomainService.RegisterNewProfile(User.Factory.Create())
+        //}
     }
 }

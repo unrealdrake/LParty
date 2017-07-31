@@ -1,8 +1,8 @@
 ﻿
 namespace SharedKernel.DomainEvents
 {
-    public interface IHandles<IDomainEvent> 
+    public interface IHandles<T> where T : IDomainEvent
     {
-        void Handle(IDomainEvent domainEvent);
+        void Handle(T domainEvent);
     }
 }

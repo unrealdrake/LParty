@@ -1,7 +1,9 @@
 ﻿using System.Linq;
 using LP.UserProfile.Domain.User_Area.Core;
+using LP.UserProfile.Domain.User_Area.Events;
 using LP.UserProfile.Domain.User_Area.Repositories;
 using Shared.Infrasctructure.ObjectExtensions;
+using SharedKernel.DomainEvents;
 
 namespace LP.UserProfile.Domain.User_Area.DomainServices
 {
@@ -30,6 +32,8 @@ namespace LP.UserProfile.Domain.User_Area.DomainServices
             if (!IsAlreadyExist(userProfile.LoginData.Login))
             {
                 _writeUserProfileRepository.AddNewProfile(userProfile);
+                DomainEvents.Raise(new UserProfileCreatedEvent(userProfile.Id));
+                
                 return true;
             }
 
