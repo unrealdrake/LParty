@@ -12,30 +12,30 @@ namespace LP.UserProfile.EFRepository
         {
         }
 
-        public void Delete(User entity)
-        {
-            Context.Attach(entity);
-            Context.Entry(entity).State = EntityState.Deleted;
-            Context.Entry(entity.Address).State = EntityState.Deleted;
-            Context.Entry(entity.LoginData).State = EntityState.Deleted;
-            Context.Entry(entity.PersonalInformation).State = EntityState.Deleted;
-            Context.SaveChanges();
-        }
-
         public void AddNewProfile(User userProfile)
         {
             Add(userProfile);
-        }   
+        }
 
         public void ClearAll()
         {
-            foreach (var userProfile in Context.Set<User>()
-                .Include(up => up.LoginData)
-                .Include(up => up.PersonalInformation)
-                .Include(up => up.Address).ToList())
+            foreach (var userProfile in Context.Set<User>().ToList())
             {
-                Delete(userProfile);
+                Delete(userProfile.Id);
             }
+        }
+
+        public void Delete(int userProfileId)
+        {
+            var user = Context.Set<User>()
+                .Include(u => u.Address)
+                .Include(u => u.LoginData)
+                .Include(u => u.PersonalInformation).FirstOrDefault(u => u.Id == userProfileId);
+            Context.Entry(user).State = EntityState.Deleted;
+            Context.Entry(user.LoginData).State = EntityState.Deleted;
+            Context.Entry(user.Address).State = EntityState.Deleted;
+            Context.Entry(user.PersonalInformation).State = EntityState.Deleted;
+            Context.SaveChanges();
         }
     }
 }

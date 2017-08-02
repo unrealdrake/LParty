@@ -2,5 +2,7 @@
 (
 	[Id] INT NOT NULL PRIMARY KEY IDENTITY(1,1), 
     [City] NVARCHAR(40) NOT NULL, 
-    [UserId] INT NOT NULL
+    [UserId] INT NOT NULL,
+
+	CONSTRAINT FK_UserAddress FOREIGN KEY (UserId) REFERENCES [User](Id)
 )

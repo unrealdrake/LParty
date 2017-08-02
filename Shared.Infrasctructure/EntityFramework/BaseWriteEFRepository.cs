@@ -8,6 +8,7 @@ namespace Shared.Infrasctructure.EntityFramework
         {
         }
 
+
         public void Add(TRoot entity)
         {
             Context.Set<TRoot>().Add(entity);
