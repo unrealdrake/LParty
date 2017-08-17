@@ -5,7 +5,7 @@ namespace LP.UserProfile.Domain.User_Area.Repositories
 {
     public interface IWriteUserProfileRepository: IWriteRepository<User>
     {
-        void Delete(int userProfileId);
+        void Delete(User userProfile);
         void AddNewProfile(User userProfile);
         void ClearAll();
     }

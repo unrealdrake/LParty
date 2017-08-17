@@ -53,7 +53,7 @@ namespace LP.UserProfile.Tests.EFRepository
             int allUsersCount = _readUsersRepository.GetAllUsers().Count();
             if (existingUser != null)
             {
-                _writeUsersRepository.Delete(existingUser.Id);
+                _writeUsersRepository.Delete(existingUser);
             }
             int allUsersCountAfterSaving = _readUsersRepository.GetAllUsers().Count();
             Assert.AreEqual(allUsersCount - 1, allUsersCountAfterSaving);

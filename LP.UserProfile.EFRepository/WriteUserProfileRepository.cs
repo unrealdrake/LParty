@@ -19,22 +19,21 @@ namespace LP.UserProfile.EFRepository
 
         public void ClearAll()
         {
-            foreach (var userProfile in Context.Set<User>().ToList())
+            foreach (var userProfile in Context.Set<User>().
+                Include(u => u.PersonalInformation).
+                Include(u => u.LoginData).
+                ToList())
             {
-                Delete(userProfile.Id);
+                Delete(userProfile);
             }
         }
 
-        public void Delete(int userProfileId)
+        public void Delete(User userProfile)
         {
-            var user = Context.Set<User>()
-                .Include(u => u.Address)
-                .Include(u => u.LoginData)
-                .Include(u => u.PersonalInformation).FirstOrDefault(u => u.Id == userProfileId);
-            Context.Entry(user).State = EntityState.Deleted;
-            Context.Entry(user.LoginData).State = EntityState.Deleted;
-            Context.Entry(user.Address).State = EntityState.Deleted;
-            Context.Entry(user.PersonalInformation).State = EntityState.Deleted;
+            Context.Attach(userProfile);
+            Context.Remove(userProfile.PersonalInformation);
+            Context.Remove(userProfile.LoginData);
+            Context.Remove(userProfile);
             Context.SaveChanges();
         }
     }
