@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using LP.UserProfile.Domain.User_Area.Repositories;
 using LP.UserProfile.EFRepository;
+using Shared.Infrasctructure.DomainEvents;
 using SharedKernel.DomainEvents;
 using StructureMap;
 
@@ -25,7 +26,12 @@ namespace Shared.CompositionRoot
 
                 cfg.For<IReadUserProfileRepository>().Use<ReadUserProfileRepository>().Transient();
                 cfg.For<IWriteUserProfileRepository>().Use<WriteUserProfileRepository>().Transient();
+
                 cfg.For<UserProfileEFContext>().Use(ctx => new UserProfileEFContext(Settings.ConnectionString));
+
+                cfg.For<ICorrelatedResolverObligation>().Use<DependenciesRegistrator>();
+
+                cfg.For<IDomainEventsRaiser>().Use<DomainEventsAssemblyRaiser>();
             });
 
             return container;

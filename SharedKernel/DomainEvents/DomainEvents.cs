@@ -1,43 +1,32 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace SharedKernel.DomainEvents
 {
     public static class DomainEvents
     {
-        public static ICorrelatedResolverObligation ObligatedResolver;
+        private static IDomainEventsRaiser _eventsRaiser;
 
-        [ThreadStatic] //so that each thread has its own callbacks
-        private static List<Delegate> _actions;
-
+        public static void SetResolver(IDomainEventsRaiser raiser)
+        {
+            _eventsRaiser = raiser;
+        }
 
         //Registers a callback for the given domain event
         public static void Register<T>(Action<T> callback) where T : IDomainEvent
         {
-            if (_actions == null)
-                _actions = new List<Delegate>();
-
-            _actions.Add(callback);
+            _eventsRaiser.Register(callback);
         }
 
         //Clears callbacks passed to Register on the current thread
         public static void ClearCallbacks()
         {
-            _actions = null;
+            _eventsRaiser.ClearCallbacks();
         }
 
         //Raises the given domain event
         public static void Raise<T>(T args) where T : IDomainEvent
         {
-            IEnumerable<IHandles<T>> handlers = ObligatedResolver.ResolveAll<T>();
-            foreach (var handler in handlers)
-                handler.Handle(args);
-
-            if (_actions != null)
-                foreach (var action in _actions)
-                    if (action is Action<T>)
-                        ((Action<T>)action)(args);
+            _eventsRaiser.Raise(args);
         }
     }
 }
-

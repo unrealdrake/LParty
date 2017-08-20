@@ -16,7 +16,7 @@ namespace Shared.CompositionRoot
         static ResolverRoot()
         {
             Resolver = new DependenciesRegistrator();
-            DomainEvents.ObligatedResolver = Resolver;
+            DomainEvents.SetResolver(Resolver.Resolve<IDomainEventsRaiser>());
         }
 
         public static T Resolve<T>()

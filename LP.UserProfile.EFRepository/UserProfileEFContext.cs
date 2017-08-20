@@ -1,5 +1,4 @@
-﻿using LP.UserProfile.Domain.User_Area;
-using LP.UserProfile.Domain.User_Area.Core;
+﻿using LP.UserProfile.Domain.User_Area.Core;
 using LP.UserProfile.EFRepository.FluentMappings;
 using Microsoft.EntityFrameworkCore;
 using Shared.Infrasctructure.EntityFramework;
