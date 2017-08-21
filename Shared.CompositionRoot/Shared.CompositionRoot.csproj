@@ -14,4 +14,10 @@
     <ProjectReference Include="..\LP.UserProfile.EFRepository\LP.UserProfile.EFRepository.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="SQLitePCLRaw.provider.e_sqlite3">
+      <HintPath>C:\Program Files\dotnet\sdk\NuGetFallbackFolder\sqlitepclraw.provider.e_sqlite3.netstandard11\1.1.7\lib\netstandard1.1\SQLitePCLRaw.provider.e_sqlite3.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

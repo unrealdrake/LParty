@@ -1,13 +1,10 @@
 ﻿using System.Collections.Generic;
-using LP.UserProfile.Domain.User_Area.Repositories;
-using LP.UserProfile.EFRepository;
-using Shared.Infrasctructure.DomainEvents;
 using SharedKernel.DomainEvents;
 using StructureMap;
 
 namespace Shared.CompositionRoot
 {
-    internal class DependenciesRegistrator : ICorrelatedResolverObligation
+    public class DependenciesRegistrator : ICorrelatedResolverObligation
     {
         public static SettingsForDependencies Settings = new SettingsForDependencies();
 
@@ -18,20 +15,12 @@ namespace Shared.CompositionRoot
             return Container.GetInstance<T>();
         }
 
-        public static Container Register()
+        public static Container Register(Registry registryToExtend = null)
         {
+            registryToExtend?.IncludeRegistry<RootRegistry>();
             var container = new Container(cfg =>
             {
-                MediatorBuilder.RegisterDependenciesForMediator(cfg);
-
-                cfg.For<IReadUserProfileRepository>().Use<ReadUserProfileRepository>().Transient();
-                cfg.For<IWriteUserProfileRepository>().Use<WriteUserProfileRepository>().Transient();
-
-                cfg.For<UserProfileEFContext>().Use(ctx => new UserProfileEFContext(Settings.ConnectionString));
-
-                cfg.For<ICorrelatedResolverObligation>().Use<DependenciesRegistrator>();
-
-                cfg.For<IDomainEventsRaiser>().Use<DomainEventsAssemblyRaiser>();
+                cfg.AddRegistry<RootRegistry>();
             });
 
             return container;

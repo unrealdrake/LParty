@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Shared.CompositionRoot;
+using StructureMap;
 
 namespace LP.UserProfile.Api
 {
@@ -19,6 +21,11 @@ namespace LP.UserProfile.Api
             services.AddMvc();
         }
 
+        public void ConfigureContainer(Registry registry)
+        {
+            DependenciesRegistrator.Register(registry);
+        }
+
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
@@ -26,7 +33,10 @@ namespace LP.UserProfile.Api
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseMvc();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute("default", "{controller}/{action}/{id?}");
+            });
         }
     }
 }

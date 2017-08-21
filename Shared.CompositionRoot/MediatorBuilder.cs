@@ -2,13 +2,12 @@
 using LP.UserProfile.Domain.User_Area.Events;
 using MediatR;
 using SharedKernel.DomainEvents;
-using StructureMap;
 
 namespace Shared.CompositionRoot
 {
     public class MediatorBuilder
     {
-        public static void RegisterDependenciesForMediator(ConfigurationExpression cfg)
+        public static void RegisterDependenciesForMediator(RootRegistry cfg)
         {
             cfg.Scan(scanner =>
             {
