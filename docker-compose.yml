@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  lp.userprofile.api:
+    image: lp.userprofile.api
+    build:
+      context: ./LP.UserProfile.Api
+      dockerfile: Dockerfile
