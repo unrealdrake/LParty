@@ -11,7 +11,7 @@ namespace LP.UserProfile.EFRepository.FluentMappings
         {
             builder.ToTable("User").HasKey(u => u.Id);
             builder.Property(u => u.Id).ValueGeneratedOnAdd();
-            builder.HasOne(user => user.Address).WithOne(a => a.User).HasForeignKey<Address>(a => a.UserId).OnDelete(DeleteBehavior.Cascade);
+            builder.HasOne(user => user.Address).WithOne("User").HasForeignKey<Address>("UserId").OnDelete(DeleteBehavior.Cascade);
             //PersonalInformation
             builder.OwnsOne(user => user.PersonalInformation).Property(pi => pi.FirstName).HasColumnName("FirstName");
             builder.OwnsOne(user => user.PersonalInformation).Property(pi => pi.LastName).HasColumnName("LastName");

@@ -6,8 +6,8 @@ using MediatR;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shared.CompositionRoot;
 using System.Threading.Tasks;
-using LP.UserProfile.Domain.User_Area.Core;
 using LP.UserProfile.Domain.User_Area.Repositories;
+using LP.UserProfile.Gateway.Models;
 
 namespace LP.UserProfile.Tests.ApplicationService
 {
@@ -16,8 +16,13 @@ namespace LP.UserProfile.Tests.ApplicationService
     {
         private static IMediator _mediator;
         private static IReadUserProfileRepository _readUserProfileRepository;
-        private readonly Address _defaultAddress = Address.Factory.Create("London");
-        private readonly PersonalInformation _personalInformation = PersonalInformation.Factory.Create("Jack", "Smith");
+        RegisterNewProfileDto defaultNewProfile = new RegisterNewProfileDto
+        {
+            AddressCity = "London",
+            FirstName = "Genny",
+            LastName = "Motion",
+            Login = "Graber"
+        };
 
         [ClassInitialize]
         public static void PreInitConfiguration(TestContext testContext)
@@ -34,8 +39,8 @@ namespace LP.UserProfile.Tests.ApplicationService
             if (allUsers.Any())
             {
                 var existingUser = allUsers.First();
-                var newUser = User.Factory.Create(_personalInformation, _defaultAddress, LoginData.Factory.Create(existingUser.LoginData.Login));
-                bool createdSuccessfully = await _mediator.Send(new RegisterNewProfileCommand(newUser));
+                defaultNewProfile.Login = existingUser.LoginData.Login;
+                bool createdSuccessfully = await _mediator.Send(new RegisterNewProfileCommand(defaultNewProfile));
 
                 Assert.IsFalse(createdSuccessfully);
             }
@@ -44,8 +49,8 @@ namespace LP.UserProfile.Tests.ApplicationService
         [TestMethod]
         public async Task CreateIfUserAlreadyNotExists()
         {
-            var newUser = User.Factory.Create(_personalInformation, _defaultAddress, LoginData.Factory.Create(Guid.NewGuid().ToString()));
-            bool createdSuccessfully = await _mediator.Send(new RegisterNewProfileCommand(newUser));
+            defaultNewProfile.Login = Guid.NewGuid().ToString();
+            bool createdSuccessfully = await _mediator.Send(new RegisterNewProfileCommand(defaultNewProfile));
 
             Assert.IsTrue(createdSuccessfully);
         }

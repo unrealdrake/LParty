@@ -8,8 +8,6 @@ namespace Shared.CompositionRoot
 {
     public class RootRegistry : Registry
     {
-        public static SettingsForDependencies Settings = new SettingsForDependencies();
-
         public RootRegistry()
         {
             MediatorBuilder.RegisterDependenciesForMediator(this);
@@ -17,12 +15,11 @@ namespace Shared.CompositionRoot
             For<IReadUserProfileRepository>().Use<ReadUserProfileRepository>().Transient();
             For<IWriteUserProfileRepository>().Use<WriteUserProfileRepository>().Transient();
 
-            For<UserProfileEFContext>().Use(ctx => new UserProfileEFContext(Settings.ConnectionString));
+            For<UserProfileEFContext>().Use(ctx => new UserProfileEFContext(DependenciesRegistrator.Settings.ConnectionString));
 
             For<ICorrelatedResolverObligation>().Use<DependenciesRegistrator>();
 
             For<IDomainEventsRaiser>().Use<DomainEventsAssemblyRaiser>();
-        ;
         }
     }
 }

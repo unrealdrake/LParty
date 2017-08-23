@@ -19,9 +19,9 @@ namespace LP.UserProfile.EFRepository
         public ReadOnlyCollection<User> GetAllUsers()
         {
             return _efContext.UserProfiles
-                        .Include(up => up.LoginData)
-                        .Include(up => up.PersonalInformation)
-                        .Include(up => up.LoginData).
+                        //.Include(up => up.LoginData)
+                        //.Include(up => up.PersonalInformation)
+                        .Include(up => up.Address).
                         AsNoTracking().ToList().AsReadOnly();
         }
     }

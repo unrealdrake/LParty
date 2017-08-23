@@ -10,7 +10,7 @@ namespace LP.UserProfile.Domain.User_Area.Core
         public string Login
         {
             get => _login;
-            set { EnsureIsValid(new LoginValidator(), value); _login = value; }
+            set { EnsureIsValid(new LoginValidator(), value, "Login"); _login = value; }
         }
         #endregion
 

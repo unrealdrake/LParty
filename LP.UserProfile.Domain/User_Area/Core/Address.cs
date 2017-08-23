@@ -5,16 +5,16 @@ namespace LP.UserProfile.Domain.User_Area.Core
 {
     public sealed class Address : ValueObjectBase<Address>
     {
-        public int Id { get; private set; }
-        public int UserId { get; private set; }
-        public User User { get; set; }
+        private int Id { get; set; }
+        private int UserId { get; set; }
+        private User User { get; set; }
 
         #region [PROPS]
         private string _city;
         public string City
         {
             get => _city;
-            set { EnsureIsValid(new CityValidator(), value); _city = value; }
+            set { EnsureIsValid(new CityValidator(), value, "City"); _city = value; }
         }
         #endregion 
         private Address() { }

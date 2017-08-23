@@ -1,8 +1,10 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using LP.UserProfile.ApplicationService.Write.RegisterNewProfile;
 using LP.UserProfile.Domain.User_Area.Core;
-using Microsoft.AspNetCore.Mvc;
+using LP.UserProfile.Domain.User_Area.Repositories;
 using LP.UserProfile.Gateway.Models;
+using Microsoft.AspNetCore.Mvc;
 using MediatR;
 
 namespace LP.UserProfile.Api.Controllers
@@ -11,34 +13,39 @@ namespace LP.UserProfile.Api.Controllers
     public class UserProfilesController : Controller
     {
         private readonly IMediator _mediator;
+        private readonly IReadUserProfileRepository _readUserProfileRepository;
 
-        public UserProfilesController(IMediator mediatr)
+        public UserProfilesController(IMediator mediatr, IReadUserProfileRepository readUserProfileRepository)
         {
             _mediator = mediatr;
+            _readUserProfileRepository = readUserProfileRepository;
         }
 
         //// GET api/values
-        //[HttpGet]
-        //public IEnumerable<string> Get()
-        //{
-        //    return new string[] { "value1", "value2" };
-        //}
+        [HttpGet]
+        public IEnumerable<User> Get()
+        {
+            return _readUserProfileRepository.GetAllUsers();
+        }
 
-        // GET api/values/5
+
         [HttpGet("{id}")]
         public string Get(int id)
         {
             return "value";
         }
 
+        /// <summary>
+        /// Registers a new profile 
+        /// </summary>
+        /// <param name="registerProfileModel">Profile data</param>
+        /// <returns>Is user profile was created successfully</returns>
+        /// <response code="400">Invalid input data</response>
         [HttpPost]
-        public async Task Post([FromBody]RegisterNewProfileModel model)
+        [ProducesResponseType(typeof(string), 400)]
+        public async Task<bool> Post([FromBody]RegisterNewProfileDto registerProfileModel)
         {
-            var address = Address.Factory.Create(model.City);
-            var personalInformation = PersonalInformation.Factory.Create(model.FirstName, model.LastName);
-            var loginData = LoginData.Factory.Create(model.Login);
-            var user = Domain.User_Area.Core.User.Factory.Create(personalInformation, address, loginData);
-            await _mediator.Send(new RegisterNewProfileCommand(user));
+            return await _mediator.Send(new RegisterNewProfileCommand(registerProfileModel));
         }
     }
 }

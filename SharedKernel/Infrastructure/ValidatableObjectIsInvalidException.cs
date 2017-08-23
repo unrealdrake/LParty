@@ -8,11 +8,13 @@ namespace SharedKernel.Infrastructure
     public sealed class ValidatableObjectIsInvalidException : Exception
     {
         public IList<ValidationFailure> Failures;
+        public string PropertyName;
 
-        public ValidatableObjectIsInvalidException(IList<ValidationFailure> failures) :
-            base(string.Join(",", failures.Select(failure => failure.ErrorMessage)))
+        public ValidatableObjectIsInvalidException(string propertyName, IList<ValidationFailure> failures) :
+            base($"Property '{propertyName}' validation failures - " + string.Join(",", failures.Select(failure => failure.ErrorMessage)))
         {
             Failures = failures;
+            PropertyName = propertyName;
         }
     }
 }

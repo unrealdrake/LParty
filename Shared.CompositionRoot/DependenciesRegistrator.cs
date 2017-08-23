@@ -22,7 +22,7 @@ namespace Shared.CompositionRoot
             {
                 cfg.AddRegistry<RootRegistry>();
             });
-
+            ResolverRoot.Init();
             return container;
         }
 

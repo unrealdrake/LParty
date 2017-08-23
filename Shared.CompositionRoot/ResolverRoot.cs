@@ -19,6 +19,10 @@ namespace Shared.CompositionRoot
             DomainEvents.SetResolver(Resolver.Resolve<IDomainEventsRaiser>());
         }
 
+        public static void Init()
+        {
+        }
+
         public static T Resolve<T>()
         {
             return Resolver.Resolve<T>();
