@@ -53,7 +53,6 @@ namespace LP.UserProfile.Api
             {
                 routes.MapRoute("default", "{controller}/{action}/{id?}");
             });
-
         }
     }
 }

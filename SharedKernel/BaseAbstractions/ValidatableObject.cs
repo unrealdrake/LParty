@@ -8,11 +8,12 @@ namespace SharedKernel.BaseAbstractions
     {
         protected void EnsureIsValid<T>(AbstractValidator<T> validator, T valueToValidate, string propertyName, bool checkForNull = true)
         {
-            ValidationResult validationResult = validator.Validate(valueToValidate);
+            ValidationResult validationResult = new ValidationResult();
             if (checkForNull && object.Equals(valueToValidate, default(T)))
             {
                 validationResult.Errors.Add(new ValidationFailure("Root property", "Can not be null"));
             }
+            validator.Validate(valueToValidate);
             if (!validationResult.IsValid)
                 throw new ValidatableObjectIsInvalidException(propertyName, validationResult.Errors);
         }

@@ -1,6 +1,7 @@
 ﻿using LP.UserProfile.Domain.User_Area.Core;
 using LP.UserProfile.Domain.User_Area.DomainServices;
 using MediatR;
+using Shared.Infrasctructure.ObjectExtensions;
 
 namespace LP.UserProfile.ApplicationService.Write.RegisterNewProfile
 {
@@ -15,6 +16,7 @@ namespace LP.UserProfile.ApplicationService.Write.RegisterNewProfile
 
         public bool Handle(RegisterNewProfileCommand message)
         {
+            message.NotNull();
             Address address = Address.Factory.Create(message.UserProfile.AddressCity);
             LoginData loginData = LoginData.Factory.Create(message.UserProfile.Login);
             PersonalInformation personalInformation = PersonalInformation.Factory.Create(message.UserProfile.FirstName, message.UserProfile.LastName);

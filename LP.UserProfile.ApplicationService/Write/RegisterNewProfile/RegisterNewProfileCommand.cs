@@ -1,4 +1,5 @@
-﻿using LP.UserProfile.Gateway.Models;
+﻿using System;
+using LP.UserProfile.Gateway.Models;
 using MediatR;
 using Shared.Infrasctructure.ObjectExtensions;
 

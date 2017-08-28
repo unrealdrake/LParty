@@ -1,0 +1,47 @@
+﻿using System.Collections.Generic;
+using LP.UserProfile.Gateway.Models;
+
+namespace LP.UserProfile.Tests.Shared.SampleData
+{
+    public class NewProfileRegisters
+    {
+        public static IList<RegisterNewProfileDto> Profiles = new List<RegisterNewProfileDto>
+        {
+            new RegisterNewProfileDto
+            {
+                AddressCity = "London",
+                FirstName = "Genny",
+                LastName = "Motion",
+                Login = "Graber"
+            },
+            new RegisterNewProfileDto
+            {
+                AddressCity = "Tokio",
+                FirstName = "Boss",
+                LastName = "Labmer",
+                Login = "Glaven"
+            },
+            new RegisterNewProfileDto
+            {
+                AddressCity = "San Diego",
+                FirstName = "Granny",
+                LastName = "Dolton",
+                Login = "Alamus"
+            },
+            new RegisterNewProfileDto
+            {
+                AddressCity = "Oslo",
+                FirstName = "Bin",
+                LastName = "Backer",
+                Login = "Simlok"
+            },
+            new RegisterNewProfileDto
+            {
+                AddressCity = "Warsaw",
+                FirstName = "Dolton",
+                LastName = "Black",
+                Login = "Opeun"
+            }
+        };
+    }
+}

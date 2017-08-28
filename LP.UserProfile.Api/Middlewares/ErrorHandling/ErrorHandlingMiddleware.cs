@@ -29,12 +29,12 @@ namespace LP.UserProfile.Api.Middlewares.ErrorHandling
 
         private static Task HandleExceptionAsync(HttpContext context, Exception exception)
         {
-            (HttpStatusCode code, string message) httpCodeWithMessage = exception.ToHttpStatusCode();
-            var result = JsonConvert.SerializeObject(new { error = httpCodeWithMessage.message });
+            var httpCodeWithMessage = exception.ToHttpStatusCode();
+            var responseError = JsonConvert.SerializeObject(new ResponseError{ MessageError = httpCodeWithMessage.message, InnerErrorCode = httpCodeWithMessage.innerCode});
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = (int)httpCodeWithMessage.code;
 
-            return context.Response.WriteAsync(result);
+            return context.Response.WriteAsync(responseError);
         }
     }
 }

@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LP.UserProfile.Domain\LP.UserProfile.Domain.csproj" />
-    <ProjectReference Include="..\LP.UserProfile.Gateway.Models\LP.UserProfile.Gateway.Models.csproj" />
+    <ProjectReference Include="..\LP.UserProfile.Gateway.Models\LP.UserProfile.Gateway.csproj" />
   </ItemGroup>
 
   <ItemGroup>
