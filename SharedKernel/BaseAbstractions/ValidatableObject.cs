@@ -1,4 +1,5 @@
-﻿using FluentValidation;
+﻿using System.Collections.Generic;
+using FluentValidation;
 using FluentValidation.Results;
 using SharedKernel.Infrastructure;
 
@@ -8,12 +9,13 @@ namespace SharedKernel.BaseAbstractions
     {
         protected void EnsureIsValid<T>(AbstractValidator<T> validator, T valueToValidate, string propertyName, bool checkForNull = true)
         {
-            ValidationResult validationResult = new ValidationResult();
             if (checkForNull && object.Equals(valueToValidate, default(T)))
             {
-                validationResult.Errors.Add(new ValidationFailure("Root property", "Can not be null"));
+                var nullValidation = new ValidationFailure("Root property", "Can not be null");
+                throw new ValidatableObjectIsInvalidException(propertyName, new List<ValidationFailure> { nullValidation });
             }
-            validator.Validate(valueToValidate);
+
+            var validationResult = validator.Validate(valueToValidate);
             if (!validationResult.IsValid)
                 throw new ValidatableObjectIsInvalidException(propertyName, validationResult.Errors);
         }

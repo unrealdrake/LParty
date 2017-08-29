@@ -24,7 +24,7 @@ namespace LP.UserProfile.Tests.Domain.User_Area.Core
         }
 
         [TestMethod]
-        [ExpectedException(typeof(System.ArgumentNullException))]
+        [ExpectedException(typeof(ValidatableObjectIsInvalidException))]
         public void CannotCreateWithNullFirstOrLastName()
         {
             PersonalInformation.Factory.Create(null, null);

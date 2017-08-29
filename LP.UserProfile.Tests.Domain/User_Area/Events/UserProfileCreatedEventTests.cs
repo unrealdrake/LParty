@@ -36,7 +36,6 @@ namespace LP.UserProfile.Tests.Domain.User_Area.Events
         [TestMethod]
         public void UserProfileCreatedEventRaised()
         {
-            _writeUserProfileRepository.ClearAll();
             DomainEvents.Register<UserProfileCreatedEvent>((ev) =>
             {
                 Assert.AreEqual(_defaultProfile.Id, ev.UserProfileId);
