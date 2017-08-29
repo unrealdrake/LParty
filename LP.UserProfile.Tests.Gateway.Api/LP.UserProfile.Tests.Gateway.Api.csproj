@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\LP.UserProfile.Api\LP.UserProfile.Api.csproj" />
     <ProjectReference Include="..\LP.UserProfile.Tests.Shared\LP.UserProfile.Tests.Shared.csproj" />
   </ItemGroup>
 

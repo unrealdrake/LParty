@@ -28,7 +28,7 @@ namespace LP.UserProfile.Tests.Domain.User_Area.Events
         [ClassInitialize]
         public static void PreInitConfiguration(TestContext testContext)
         {
-            SetTestSettings();
+            Init(testContext);
             _userProfileDomainService = ResolverRoot.Resolve<UserProfileDomainService>();
             _writeUserProfileRepository = ResolverRoot.Resolve<IWriteUserProfileRepository>();
         }
@@ -42,12 +42,6 @@ namespace LP.UserProfile.Tests.Domain.User_Area.Events
                 Assert.AreEqual(_defaultProfile.Id, ev.UserProfileId);
             });
             _userProfileDomainService.RegisterNewProfile(_defaultProfile);
-        }
-
-        [ClassCleanup]
-        public static void CleanDatabase()
-        {
-            _writeUserProfileRepository.ClearAll();
         }
     }
 }

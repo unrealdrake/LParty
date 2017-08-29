@@ -20,7 +20,7 @@ namespace LP.UserProfile.Tests.EFRepository
         [ClassInitialize]
         public static void PreInitConfiguration(TestContext testContext)
         {
-            SetTestSettings();
+            Init(testContext);
 
             _readUsersRepository = ResolverRoot.Resolve<IReadUserProfileRepository>();
             _writeUsersRepository = ResolverRoot.Resolve<IWriteUserProfileRepository>();

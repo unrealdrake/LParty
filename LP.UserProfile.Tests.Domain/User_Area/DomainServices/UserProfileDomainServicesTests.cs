@@ -17,7 +17,7 @@ namespace LP.UserProfile.Tests.Domain.User_Area.DomainServices
         [ClassInitialize]
         public static void PreInitConfiguration(TestContext testContext)
         {
-            SetTestSettings();
+            Init(testContext);
             _userProfileDomainService = ResolverRoot.Resolve<UserProfileDomainService>();
             _readUserProfileRepository = ResolverRoot.Resolve<IReadUserProfileRepository>();
         }

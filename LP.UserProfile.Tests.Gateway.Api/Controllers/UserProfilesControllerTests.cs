@@ -1,38 +1,36 @@
-using System;
-using LP.UserProfile.ApplicationService.Write.RegisterNewProfile;
+using System.Threading.Tasks;
 using LP.UserProfile.Domain.User_Area.Repositories;
 using LP.UserProfile.Gateway.Models;
 using LP.UserProfile.Tests.Shared;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shared.CompositionRoot;
+using LP.UserProfile.Api.Controllers;
 
 namespace LP.UserProfile.Tests.Gateway.Api.Controllers
 {
     [TestClass]
     public class UserProfilesControllerTests : BaseTestClass
     {
-        private static IReadUserProfileRepository _readUserProfileRepository;
         RegisterNewProfileDto defaultNewProfile = new RegisterNewProfileDto
         {
             AddressCity = "London",
             FirstName = "Genny",
             LastName = "Motion",
-            Login = "Graber"
+            Login = "GraberSon"
         };
 
         [ClassInitialize]
         public static void PreInitConfiguration(TestContext testContext)
         {
-            SetTestSettings();
-
-            _readUserProfileRepository = ResolverRoot.Resolve<IReadUserProfileRepository>();
+            Init(testContext);
         }
 
         [TestMethod]
-        public void TestMethod1()
+        public async Task UserProfileMustBeCreated()
         {
-            defaultNewProfile.Login = Guid.NewGuid().ToString();
-            bool createdSuccessfully = await _mediator.Send(new RegisterNewProfileCommand(defaultNewProfile));
+            var userProfileController = ResolverRoot.Resolve<UserProfilesController>();
+            var isCreated = await userProfileController.Post(defaultNewProfile);
+            Assert.IsTrue(isCreated);
         }
     }
 }
