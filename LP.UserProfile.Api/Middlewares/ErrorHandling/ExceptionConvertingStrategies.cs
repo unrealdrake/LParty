@@ -5,8 +5,16 @@ using SharedKernel.Infrastructure;
 
 namespace LP.UserProfile.Api.Middlewares.ErrorHandling
 {
+    /// <summary>
+    /// Converting exceptions area
+    /// </summary>
     public static class ExceptionConvertingStrategies
     {
+        /// <summary>
+        /// Converts Exception to HttpStatusCode with message and innerCode
+        /// </summary>
+        /// <param name="generalException"></param>
+        /// <returns></returns>
         public static (HttpStatusCode code, string message, InnerErrorCode innerCode) ToHttpStatusCode(this Exception generalException)
         {
             switch (generalException)

@@ -5,15 +5,27 @@ using Newtonsoft.Json;
 
 namespace LP.UserProfile.Api.Middlewares.ErrorHandling
 {
+    /// <summary>
+    /// Error middleware
+    /// </summary>
     public sealed class ErrorHandlingMiddleware
     {
         private readonly RequestDelegate _next;
 
+        /// <summary>
+        /// Error middleware constructor
+        /// </summary>
+        /// <param name="next"></param>
         public ErrorHandlingMiddleware(RequestDelegate next)
         {
             _next = next;
         }
 
+        /// <summary>
+        /// Invoke delegate from http context
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public async Task Invoke(HttpContext context)
         {
             try
