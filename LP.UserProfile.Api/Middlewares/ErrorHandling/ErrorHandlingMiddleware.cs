@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 
 namespace LP.UserProfile.Api.Middlewares.ErrorHandling
 {
-    internal sealed class ErrorHandlingMiddleware
+    public sealed class ErrorHandlingMiddleware
     {
         private readonly RequestDelegate _next;
 
@@ -30,7 +29,7 @@ namespace LP.UserProfile.Api.Middlewares.ErrorHandling
         private static Task HandleExceptionAsync(HttpContext context, Exception exception)
         {
             var httpCodeWithMessage = exception.ToHttpStatusCode();
-            var responseError = JsonConvert.SerializeObject(new ResponseError{ MessageError = httpCodeWithMessage.message, InnerErrorCode = httpCodeWithMessage.innerCode});
+            var responseError = JsonConvert.SerializeObject(new ResponseError { MessageError = httpCodeWithMessage.message, InnerErrorCode = httpCodeWithMessage.innerCode });
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = (int)httpCodeWithMessage.code;
 

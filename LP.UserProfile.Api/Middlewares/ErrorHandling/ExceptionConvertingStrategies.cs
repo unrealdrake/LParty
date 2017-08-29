@@ -5,7 +5,7 @@ using SharedKernel.Infrastructure;
 
 namespace LP.UserProfile.Api.Middlewares.ErrorHandling
 {
-    internal static class ExceptionConvertingStrategies
+    public static class ExceptionConvertingStrategies
     {
         public static (HttpStatusCode code, string message, InnerErrorCode innerCode) ToHttpStatusCode(this Exception generalException)
         {

@@ -1,10 +1,10 @@
 using System.Threading.Tasks;
-using LP.UserProfile.Domain.User_Area.Repositories;
 using LP.UserProfile.Gateway.Models;
 using LP.UserProfile.Tests.Shared;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shared.CompositionRoot;
 using LP.UserProfile.Api.Controllers;
+using SharedKernel.Infrastructure;
 
 namespace LP.UserProfile.Tests.Gateway.Api.Controllers
 {
@@ -31,6 +31,15 @@ namespace LP.UserProfile.Tests.Gateway.Api.Controllers
             var userProfileController = ResolverRoot.Resolve<UserProfilesController>();
             var isCreated = await userProfileController.Post(defaultNewProfile);
             Assert.IsTrue(isCreated);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ValidatableObjectIsInvalidException))]
+        public async Task UserProfileMustProduce400ErrorIfInvalidaData()
+        {
+            var userProfileController = ResolverRoot.Resolve<UserProfilesController>();
+            defaultNewProfile.FirstName = null;
+            await userProfileController.Post(defaultNewProfile);
         }
     }
 }
