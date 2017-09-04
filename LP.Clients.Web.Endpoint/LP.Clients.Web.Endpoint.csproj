@@ -2,12 +2,29 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
-    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <TypeScriptToolsVersion>2.3</TypeScriptToolsVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Scripts\App.ts" />
-    <None Remove="Scripts\Infrastructure.ts" />
+    <None Remove="Features\Home\Index\Index.ts" />
+    <None Remove="Features\Home\ProfilesList\ProfilesList.ts" />
+    <None Remove="Features\Shared\extensions\global.ts" />
+    <None Remove="Features\Shared\typings\Global.d.ts" />
+    <None Remove="Features\Shared\typings\Vue.d.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.0" />
+    <PackageReference Include="Refit" Version="4.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="Features\Home\Index\Index.ts" />
+    <TypeScriptCompile Include="Features\Home\ProfilesList\ProfilesList.ts" />
+    <TypeScriptCompile Include="Features\Shared\extensions\global.ts" />
+    <TypeScriptCompile Include="Features\Shared\typings\Global.d.ts" />
+    <TypeScriptCompile Include="Features\Shared\typings\Vue.d.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -15,12 +32,23 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+    <ProjectReference Include="..\Shared.CompositionRoot\Shared.CompositionRoot.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <TypeScriptCompile Include="Scripts\App.ts" />
-    <TypeScriptCompile Include="Scripts\Infrastructure.ts" />
-  </ItemGroup>
-  
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
+    <TypeScriptModuleKind />
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile>wwwroot\bundle.js</TypeScriptOutFile>
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
+  </PropertyGroup>
+
 </Project>

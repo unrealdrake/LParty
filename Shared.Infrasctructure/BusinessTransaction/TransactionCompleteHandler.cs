@@ -34,7 +34,7 @@ namespace Shared.Infrasctructure.BusinessTransaction
             {
                 isolatedAction();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 //Logger.ErrorFormat("Isolated action failed", ex);
             }

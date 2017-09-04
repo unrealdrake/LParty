@@ -9,15 +9,4 @@ namespace LP.UserProfile.Gateway.Refit
         [Post("/userProfiles")]
         Task<bool> RegisterAsync([Body]RegisterNewProfileDto registerProfileDto);
     }
-
-
-
-    ///// Registers a new profile 
-    ///// </summary>
-    ///// <param name="registerProfileModel">Profile data</param>
-    ///// <returns>Is user profile was created successfully</returns>
-    ///// <response code="400">Invalid input data</response>
-    //[HttpPost]
-    //[ProducesResponseType(typeof(ResponseError), 400)]
-    //public async Task<bool> Post([FromBody]RegisterNewProfileDto registerProfileModel)
 }

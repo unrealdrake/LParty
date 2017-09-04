@@ -21,7 +21,7 @@ namespace Shared.Infrasctructure.Tests
                     throw new OperationCanceledException();
                 }
             }
-            catch (OperationCanceledException e)
+            catch (OperationCanceledException)
             {
             }
 
@@ -70,7 +70,7 @@ namespace Shared.Infrasctructure.Tests
                 }
 
             }
-            catch (OperationCanceledException e)
+            catch (OperationCanceledException)
             {
             }
 
