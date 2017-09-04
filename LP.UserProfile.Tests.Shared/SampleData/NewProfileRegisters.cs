@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using LP.UserProfile.Gateway.Models;
+using LP.UserProfile.Gateway.Dto;
 
 namespace LP.UserProfile.Tests.Shared.SampleData
 {

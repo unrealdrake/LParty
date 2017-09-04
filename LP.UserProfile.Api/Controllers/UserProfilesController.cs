@@ -2,7 +2,7 @@
 using LP.UserProfile.Api.Middlewares.ErrorHandling;
 using LP.UserProfile.ApplicationService.Write.RegisterNewProfile;
 using LP.UserProfile.Domain.User_Area.Repositories;
-using LP.UserProfile.Gateway.Models;
+using LP.UserProfile.Gateway.Dto;
 using Microsoft.AspNetCore.Mvc;
 using MediatR;
 

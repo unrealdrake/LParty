@@ -1,5 +1,5 @@
 ﻿
-namespace LP.UserProfile.Gateway.Models
+namespace LP.UserProfile.Gateway.Dto
 {
     public sealed class RegisterNewProfileDto
     {

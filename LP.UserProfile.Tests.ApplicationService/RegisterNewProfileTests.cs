@@ -6,7 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shared.CompositionRoot;
 using System.Threading.Tasks;
 using LP.UserProfile.Domain.User_Area.Repositories;
-using LP.UserProfile.Gateway.Models;
+using LP.UserProfile.Gateway.Dto;
 
 namespace LP.UserProfile.Tests.ApplicationService
 {

@@ -1,9 +1,9 @@
 using System.Threading.Tasks;
-using LP.UserProfile.Gateway.Models;
 using LP.UserProfile.Tests.Shared;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shared.CompositionRoot;
 using LP.UserProfile.Api.Controllers;
+using LP.UserProfile.Gateway.Dto;
 using SharedKernel.Infrastructure;
 
 namespace LP.UserProfile.Tests.Gateway.Api.Controllers
