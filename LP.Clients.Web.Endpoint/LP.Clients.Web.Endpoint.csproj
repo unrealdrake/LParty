@@ -28,10 +28,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Shared.CompositionRoot\Shared.CompositionRoot.csproj" />
   </ItemGroup>
 
