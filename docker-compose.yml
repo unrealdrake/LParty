@@ -10,17 +10,12 @@ services:
       - sql.data
 
   sql.data:
-    image: microsoft/mssql-server-linux
+    image: microsoft/mssql-server-windows
     environment:
       - SA_PASSWORD=Pass@word
       - ACCEPT_EULA=Y
     ports:
-      - "5433:1433"
-  lp.clients.web:
-    image: lp.clients.web
-    build:
-      context: ./../LP.Clients.Web
-      dockerfile: Dockerfile
+      - "1433:1433"
 
   lp.clients.web.endpoint:
     image: lp.clients.web.endpoint

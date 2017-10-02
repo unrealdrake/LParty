@@ -1,15 +1,9 @@
 ﻿{
   "connectionStrings": {
-    "LP": "Server=tcp:192.168.1.2,5433;Database=LP;User Id=sa;Password=Pass@word;",
-
-    //"LP": "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=LP;Integrated Security=True;TrustServerCertificate=True;MultipleActiveResultSets=True;",
-    // "LP_Testing": "Server=tcp:127.0.0.1,5433;Database=LP_Testing;User Id=sa;Password=Pass@word;"
-    "LP_Testing": "Data Source=TERYOHINI-2;Initial Catalog=LP_Testing;Integrated Security=True;TrustServerCertificate=True;"
+    "LP": "Server=tcp:192.168.1.3,1433;Database=LP;User Id=sa;Password=Pass@word;",
+    "LP_Testing": "Server=tcp:192.168.1.3,1433;Database=LP_Testing;User Id=sa;Password=Pass@word;"
   },
   "systemApiUrls": {
     "UserProfilesApi": "http://localhost:52359/api"
   } 
 }
-
-//"LP": "Data Source=TERYOHINI-2;Initial Catalog=LP;Integrated Security=True;TrustServerCertificate=True;"
-//  "LP": "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=LP;Integrated Security=True;TrustServerCertificate=True;"
