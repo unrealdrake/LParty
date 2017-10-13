@@ -27,7 +27,7 @@ namespace LP.UserProfile.Tests.EFRepository
 
             defaultPersonalInformation = PersonalInformation.Factory.Create(firstName: "Jack", lastName: "Simon");
             defaultAddress = Address.Factory.Create(city: "London");
-            loginData = LoginData.Factory.Create(login: "Simth");
+            loginData = LoginData.Factory.Create(login: "Simth", password: "Slavert40");
             defaultUser = User.Factory.Create(defaultPersonalInformation, defaultAddress, loginData);
         }
 

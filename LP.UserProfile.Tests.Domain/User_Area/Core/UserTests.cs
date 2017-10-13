@@ -9,7 +9,7 @@ namespace LP.UserProfile.Tests.Domain.User_Area.Core
     {
         private readonly Address _defaultAddress = Address.Factory.Create("London");
         private readonly PersonalInformation _personalInformation = PersonalInformation.Factory.Create("Jack", "Smith");
-        private readonly LoginData _loginData = LoginData.Factory.Create("Granny");
+        private readonly LoginData _loginData = LoginData.Factory.Create("Granny", "Goshua90");
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
