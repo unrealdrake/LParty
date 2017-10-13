@@ -14,7 +14,7 @@ namespace LP.UserProfile.Domain.User_Area.Core
         public string City
         {
             get => _city;
-            set { EnsureIsValid(new CityValidator(), value, "City"); _city = value; }
+            private set { EnsureIsValid(new CityValidator(), value, "City"); _city = value; }
         }
         #endregion 
         private Address() { }

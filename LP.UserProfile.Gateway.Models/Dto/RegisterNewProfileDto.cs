@@ -7,5 +7,6 @@ namespace LP.UserProfile.Gateway.Dto
         public string LastName { get; set; }
         public string Login { get; set; }
         public string AddressCity { get; set; }
+        public string Password { get; set; }
     }
 }

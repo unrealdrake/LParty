@@ -10,21 +10,29 @@ namespace LP.UserProfile.Domain.User_Area.Core
         public string Login
         {
             get => _login;
-            set { EnsureIsValid(new LoginValidator(), value, "Login"); _login = value; }
+            private set { EnsureIsValid(new LoginValidator(), value, "Login"); _login = value; }
+        }
+
+        private string _password;
+        public string Password
+        {
+            get => _password;
+            private set { EnsureIsValid(new PasswordValidator(), value, "Password"); _password = value; }
         }
         #endregion
 
         private LoginData() { }
-        private LoginData(string login)
+        private LoginData(string login, string password)
         {
             Login = login;
+            Password = password;
         }
 
         public static class Factory
         {
-            public static LoginData Create(string login)
+            public static LoginData Create(string login, string password)
             {
-                return new LoginData(login);
+                return new LoginData(login, password);
             }
         }
     }

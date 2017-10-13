@@ -10,21 +10,21 @@ namespace LP.UserProfile.Domain.User_Area.Core
         public PersonalInformation PersonalInformation
         {
             get => _personalInformation;
-            set { value.NotNull(); _personalInformation = value; }
+            private set { value.NotNull(); _personalInformation = value; }
         }
 
         private Address _address;
         public Address Address
         {
             get => _address;
-            set { value.NotNull(); _address = value; }
+            private set { value.NotNull(); _address = value; }
         }
 
         private LoginData _loginData;
         public LoginData LoginData
         {
             get => _loginData;
-            set { value.NotNull(); _loginData = value; }
+            private set { value.NotNull(); _loginData = value; }
         }
         #endregion
 

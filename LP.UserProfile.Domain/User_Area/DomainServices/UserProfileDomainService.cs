@@ -14,7 +14,7 @@ namespace LP.UserProfile.Domain.User_Area.DomainServices
 
         public UserProfileDomainService(IReadUserProfileRepository readUserProfileRepository, IWriteUserProfileRepository writeUserProfileRepository)
         {
-            this._readUserProfileRepository = readUserProfileRepository;
+            _readUserProfileRepository = readUserProfileRepository;
             _writeUserProfileRepository = writeUserProfileRepository;
         }
 

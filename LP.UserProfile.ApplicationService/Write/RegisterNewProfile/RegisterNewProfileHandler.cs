@@ -18,7 +18,7 @@ namespace LP.UserProfile.ApplicationService.Write.RegisterNewProfile
         {
             message.NotNull();
             Address address = Address.Factory.Create(message.UserProfile.AddressCity);
-            LoginData loginData = LoginData.Factory.Create(message.UserProfile.Login);
+            LoginData loginData = LoginData.Factory.Create(message.UserProfile.Login, message.UserProfile.Password);
             PersonalInformation personalInformation = PersonalInformation.Factory.Create(message.UserProfile.FirstName, message.UserProfile.LastName);
             User user = User.Factory.Create(personalInformation, address, loginData);
 

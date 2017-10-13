@@ -10,14 +10,14 @@ namespace LP.UserProfile.Domain.User_Area.Core
         public string FirstName
         {
             get => _firstName;
-            set { EnsureIsValid(new FirstNameValidator(), value, "FirstName"); _firstName = value; }
+            private set { EnsureIsValid(new FirstNameValidator(), value, "FirstName"); _firstName = value; }
         }
 
         private string _lastName;
         public string LastName
         {
             get => _lastName;
-            set { EnsureIsValid(new LastNameValidator(), value, "LastName"); _lastName = value; }
+            private set { EnsureIsValid(new LastNameValidator(), value, "LastName"); _lastName = value; }
         }
         #endregion
         public PersonalInformation() { }

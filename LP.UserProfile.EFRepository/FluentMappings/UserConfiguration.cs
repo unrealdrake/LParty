@@ -18,6 +18,7 @@ namespace LP.UserProfile.EFRepository.FluentMappings
             //LoginData
             builder.OwnsOne(user => user.LoginData).OnDelete(DeleteBehavior.Cascade);
             builder.OwnsOne(user => user.LoginData).Property(pi => pi.Login).HasColumnName("Login");
+            builder.OwnsOne(user => user.LoginData).Property(pi => pi.Password).HasColumnName("Password");
         }
     }
 }

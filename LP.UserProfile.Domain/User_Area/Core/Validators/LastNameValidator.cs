@@ -2,7 +2,7 @@
 
 namespace LP.UserProfile.Domain.User_Area.Core.Validators
 {
-    public sealed class LastNameValidator: AbstractValidator<string>
+    internal sealed class LastNameValidator: AbstractValidator<string>
     {
         public LastNameValidator()
         {

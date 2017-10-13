@@ -2,7 +2,7 @@
 
 namespace LP.UserProfile.Domain.User_Area.Core.Validators
 {
-    public sealed class CityValidator : AbstractValidator<string>
+    internal sealed class CityValidator : AbstractValidator<string>
     {
         public CityValidator()
         {
