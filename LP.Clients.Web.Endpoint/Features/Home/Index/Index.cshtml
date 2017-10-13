@@ -2,8 +2,8 @@
     Layout = "~/Features/Shared/_Layout.cshtml";
 }
 
-<div class="cont" id="home">
-    <div class="demo">
+<div class="cont">
+    <div class="demo" id="home">
         <div class="login">
             <div class="login__check"></div>
             <div class="login__form">
@@ -20,7 +20,7 @@
                     <input type="password" class="login__input pass" placeholder="Password" v-model="password" />
                 </div>
                 <button type="button" class="login__submit" v-bind:style="{ background: fieldsAreValid ? '' : '#443d3f' }" v-on:click="login">Sign in</button>
-                <p class="login__signup">Don't have an account? &nbsp;<a>Sign up</a></p>
+                <p class="login__signup">Don't have an account? &nbsp;<a href="Registration">Sign up</a></p>
             </div>
         </div>
     </div>

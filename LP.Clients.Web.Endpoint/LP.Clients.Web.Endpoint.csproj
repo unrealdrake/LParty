@@ -8,6 +8,7 @@
   <ItemGroup>
     <None Remove="Features\Home\Index\Index.ts" />
     <None Remove="Features\Home\ProfilesList\ProfilesList.ts" />
+    <None Remove="Features\Registration\RegistrationPage\RegistrationPage.ts" />
     <None Remove="Features\Shared\extensions\global.ts" />
     <None Remove="Features\Shared\typings\Global.d.ts" />
     <None Remove="Features\Shared\typings\Vue.d.ts" />
@@ -27,6 +28,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="Features\Home\Index\Index.ts" />
     <TypeScriptCompile Include="Features\Home\ProfilesList\ProfilesList.ts" />
+    <TypeScriptCompile Include="Features\Registration\RegistrationPage\RegistrationPage.ts" />
     <TypeScriptCompile Include="Features\Shared\extensions\global.ts" />
     <TypeScriptCompile Include="Features\Shared\typings\Global.d.ts" />
     <TypeScriptCompile Include="Features\Shared\typings\Vue.d.ts" />

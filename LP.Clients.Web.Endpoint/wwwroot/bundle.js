@@ -17,10 +17,22 @@ function initHomeViewModel() {
     });
     return homeViewModel;
 }
-//var homeViewModel = new Vue({
-//  el: '#home',
-//  data: {
-//    message: 'This is home view model. Ready for use'
-//  }
-//}); 
+function registrationPageViewModel() {
+    var registrationPageViewModel = new Vue({
+        el: '#registration',
+        data: {
+            firstName: "",
+            lastName: "",
+            login: "",
+            password: "",
+            passwordConfirm: ""
+        },
+        computed: {},
+        methods: {
+            login: function () {
+            }
+        }
+    });
+    return registrationPageViewModel;
+}
 //# sourceMappingURL=bundle.js.map

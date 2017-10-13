@@ -1,0 +1,43 @@
+﻿@{
+    Layout = "~/Features/Shared/_Layout.cshtml";
+}
+
+<div class="cont">
+    <div class="demo" id="registration">
+        <div class="login">
+            <div class="login__check"></div>
+            <div class="login__form">
+                <form novalidate v-on:submit.stop.prevent="submit">
+                    <md-theme md-name="green">
+                        <md-input-container>
+                            <label>First name</label>
+                            <md-input required v-model="firstName"></md-input>
+                        </md-input-container>
+                        <md-input-container>
+                            <label>Last name</label>
+                            <md-input required v-model="lastName"></md-input>
+                        </md-input-container>
+                        <md-input-container>
+                            <label>Login</label>
+                            <md-input required v-model="login"></md-input>
+                        </md-input-container>
+                        <md-input-container>
+                            <label>Password</label>
+                            <md-input required type="password" v-model="password"></md-input>
+                        </md-input-container>
+                        <md-input-container md-has-password>
+                            <label>Confirm Password</label>
+                            <md-input required type="password" v-model="passwordConfirm"></md-input>
+                        </md-input-container>
+                    </md-theme>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var registrationPageViewModel = registrationPageViewModel();
+</script>
+
+<link rel="stylesheet" href="~/Features/Home/Index/home.css" />
