@@ -26,16 +26,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared.CompositionRoot\Shared.CompositionRoot.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <TypeScriptCompile Include="Features\Home\Index\Index.ts" />
     <TypeScriptCompile Include="Features\Home\ProfilesList\ProfilesList.ts" />
     <TypeScriptCompile Include="Features\Registration\RegistrationPage\RegistrationPage.ts" />
     <TypeScriptCompile Include="Features\Shared\extensions\global.ts" />
     <TypeScriptCompile Include="Features\Shared\typings\Global.d.ts" />
     <TypeScriptCompile Include="Features\Shared\typings\Vue.d.ts" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Shared.CompositionRoot\Shared.CompositionRoot.csproj" />
   </ItemGroup>
 
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">

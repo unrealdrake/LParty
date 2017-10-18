@@ -20,5 +20,5 @@ services:
   lp.clients.web.endpoint:
     image: lp.clients.web.endpoint
     build:
-      context: ./LP.Clients.Web.Endpoint
+      context: ./Clients/Web/LP.Clients.Web.Endpoint
       dockerfile: Dockerfile
