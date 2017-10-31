@@ -14,7 +14,7 @@ namespace LP.UserProfile.Tests.Domain.User_Area.Events
     {
         private readonly Address _defaultAddress = Address.Factory.Create("London");
         private readonly PersonalInformation _personalInformation = PersonalInformation.Factory.Create("Jack", "Smith");
-        private readonly LoginData _loginData = LoginData.Factory.Create("Games", "Bol232d");
+        private readonly LoginData _loginData = LoginData.Factory.Create("Games", "Casswor2");
         private static User _defaultProfile;
 
         private static UserProfileDomainService _userProfileDomainService;

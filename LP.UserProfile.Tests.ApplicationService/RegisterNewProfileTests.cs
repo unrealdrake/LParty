@@ -14,12 +14,14 @@ namespace LP.UserProfile.Tests.ApplicationService
     public class RegisterNewProfileTests : BaseTestClass
     {
         private static IReadUserProfileRepository _readUserProfileRepository;
-        RegisterNewProfileDto defaultNewProfile = new RegisterNewProfileDto
+
+        readonly RegisterNewProfileDto _defaultNewProfile = new RegisterNewProfileDto
         {
             AddressCity = "London",
             FirstName = "Genny",
             LastName = "Motion",
-            Login = "Graber"
+            Login = "Graber",
+            Password = "Password1"
         };
 
         [ClassInitialize]
@@ -36,8 +38,8 @@ namespace LP.UserProfile.Tests.ApplicationService
             if (allUsers.Any())
             {
                 var existingUser = allUsers.First();
-                defaultNewProfile.Login = existingUser.LoginData.Login;
-                bool createdSuccessfully = await Mediator.Send(new RegisterNewProfileCommand(defaultNewProfile));
+                _defaultNewProfile.Login = existingUser.LoginData.Login;
+                bool createdSuccessfully = await Mediator.Send(new RegisterNewProfileCommand(_defaultNewProfile));
 
                 Assert.IsFalse(createdSuccessfully);
             }
@@ -46,8 +48,8 @@ namespace LP.UserProfile.Tests.ApplicationService
         [TestMethod]
         public async Task CreateIfUserAlreadyNotExists()
         {
-            defaultNewProfile.Login = Guid.NewGuid().ToString();
-            bool createdSuccessfully = await Mediator.Send(new RegisterNewProfileCommand(defaultNewProfile));
+            _defaultNewProfile.Login = Guid.NewGuid().ToString();
+            bool createdSuccessfully = await Mediator.Send(new RegisterNewProfileCommand(_defaultNewProfile));
 
             Assert.IsTrue(createdSuccessfully);
         }

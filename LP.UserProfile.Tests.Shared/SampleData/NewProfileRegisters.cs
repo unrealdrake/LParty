@@ -12,35 +12,40 @@ namespace LP.UserProfile.Tests.Shared.SampleData
                 AddressCity = "London",
                 FirstName = "Genny",
                 LastName = "Motion",
-                Login = "Graber"
+                Login = "Graber",
+                Password = "Password1"
             },
             new RegisterNewProfileDto
             {
                 AddressCity = "Tokio",
                 FirstName = "Boss",
                 LastName = "Labmer",
-                Login = "Glaven"
+                Login = "Glaven",
+                Password = "Password1"
             },
             new RegisterNewProfileDto
             {
                 AddressCity = "San Diego",
                 FirstName = "Granny",
                 LastName = "Dolton",
-                Login = "Alamus"
+                Login = "Alamus",
+                Password = "Password1"
             },
             new RegisterNewProfileDto
             {
                 AddressCity = "Oslo",
                 FirstName = "Bin",
                 LastName = "Backer",
-                Login = "Simlok"
+                Login = "Simlok",
+                Password = "Password1"
             },
             new RegisterNewProfileDto
             {
                 AddressCity = "Warsaw",
                 FirstName = "Dolton",
                 LastName = "Black",
-                Login = "Opeun"
+                Login = "Opeun",
+                Password = "Password1"
             }
         };
     }

@@ -16,7 +16,8 @@ namespace LP.UserProfile.Tests.Gateway.Api.Controllers
             AddressCity = "London",
             FirstName = "Genny",
             LastName = "Motion",
-            Login = "GraberSon"
+            Login = "GraberSon",
+            Password = "Password1"
         };
 
         [ClassInitialize]

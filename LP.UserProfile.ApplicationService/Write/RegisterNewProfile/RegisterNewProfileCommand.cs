@@ -1,5 +1,4 @@
-﻿using System;
-using LP.UserProfile.Gateway.Dto;
+﻿using LP.UserProfile.Gateway.Dto;
 using MediatR;
 using Shared.Infrasctructure.ObjectExtensions;
 
