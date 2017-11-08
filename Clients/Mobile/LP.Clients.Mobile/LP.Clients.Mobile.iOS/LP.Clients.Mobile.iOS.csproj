@@ -88,6 +88,9 @@
     <CodesignKey>iPhone Distribution</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
+    <AppExtensionDebugBundleId />
+  </PropertyGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
@@ -135,9 +138,9 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LP.Clients.Mobile\LP.Clients.Mobile.csproj">
-      <Project>{c8ef0982-8c90-405c-a44d-3268983f909e}</Project>
-      <Name>LP.Clients.Mobile</Name>
+    <ProjectReference Include="..\LP.Clients.Mobile.Shared\LP.Clients.Mobile.Shared.csproj">
+      <Project>{60547652-8d47-4f11-baa7-b6b08bc82cf9}</Project>
+      <Name>LP.Clients.Mobile.Shared</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

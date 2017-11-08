@@ -21,7 +21,7 @@ namespace LP.Clients.Mobile.UWP
         {
             this.InitializeComponent();
 
-            LoadApplication(new LP.Clients.Mobile.App());
+            LoadApplication(new Shared.App());
         }
     }
 }
