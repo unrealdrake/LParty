@@ -16,9 +16,3 @@ services:
       - ACCEPT_EULA=Y
     ports:
       - "1433:1433"
-
-  lp.clients.web.endpoint:
-    image: lp.clients.web.endpoint
-    build:
-      context: ./Clients/Web/LP.Clients.Web.Endpoint
-      dockerfile: Dockerfile

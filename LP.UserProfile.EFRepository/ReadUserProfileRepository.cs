@@ -7,7 +7,7 @@ using Shared.Infrasctructure.EntityFramework;
 
 namespace LP.UserProfile.EFRepository
 {
-    public class ReadUserProfileRepository : BaseReadEFRepository, IReadUserProfileRepository
+    public class ReadUserProfileRepository : BaseReadEFRepository<User>, IReadUserProfileRepository
     {
         private readonly UserProfileEFContext _efContext;
 

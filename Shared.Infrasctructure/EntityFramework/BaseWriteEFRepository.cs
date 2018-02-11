@@ -1,18 +1,20 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using SharedKernel.BaseAbstractions;
 
 namespace Shared.Infrasctructure.EntityFramework
 {
-    public abstract class BaseWriteEFRepository<TRoot> : BaseReadEFRepository where TRoot : class
+    public abstract class BaseWriteEFRepository<TRoot> : BaseReadEFRepository<TRoot> where TRoot : class, IAggregateRoot
     {
         protected BaseWriteEFRepository(DbContext context) : base(context)
         {
         }
 
 
-        public void Add(TRoot entity)
+        public async Task AddAsync(TRoot entity)
         {
             Context.Set<TRoot>().Add(entity);
-            Context.SaveChanges();
+            await Context.SaveChangesAsync();
         }
     }
 }

@@ -1,5 +1,7 @@
 ﻿using System.Linq;
+using System.Threading.Tasks;
 using LP.UserProfile.Domain.User_Area.Core;
+using LP.UserProfile.Domain.User_Area.Core.Specifications;
 using LP.UserProfile.Domain.User_Area.Events;
 using LP.UserProfile.Domain.User_Area.Repositories;
 using Shared.Infrasctructure.ObjectExtensions;
@@ -18,20 +20,20 @@ namespace LP.UserProfile.Domain.User_Area.DomainServices
             _writeUserProfileRepository = writeUserProfileRepository;
         }
 
-        public bool IsAlreadyExist(string login)
+        public async Task<bool> IsAlreadyExistAsync(string login)
         {
             login.NotNullOrEmpty();
 
-            return _readUserProfileRepository.GetAllUsers().Any(user => user.LoginData.Login == login);
+            return (await _readUserProfileRepository.FindAsync(new UserExistsByLoginSpec(login))).Any();
         }
 
-        public bool RegisterNewProfile(User userProfile)
+        public async Task<bool> RegisterNewProfileAsync(User userProfile)
         {
             userProfile.NotNull();
 
-            if (!IsAlreadyExist(userProfile.LoginData.Login))
+            if (! await IsAlreadyExistAsync(userProfile.LoginData.Login))
             {
-                _writeUserProfileRepository.AddNewProfile(userProfile);
+                await _writeUserProfileRepository.AddNewProfileAsync(userProfile);
                 DomainEvents.Raise(new UserProfileCreatedEvent(userProfile.Id));
                 
                 return true;
