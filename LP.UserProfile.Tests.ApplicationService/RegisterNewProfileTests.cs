@@ -34,7 +34,7 @@ namespace LP.UserProfile.Tests.ApplicationService
         [TestMethod]
         public async Task CanNotCreateIfUserAlreadyExists()
         {
-            var allUsers = _readUserProfileRepository.GetAllUsers();
+            var allUsers = await _readUserProfileRepository.GetAllUsersAsync();
             if (allUsers.Any())
             {
                 var existingUser = allUsers.First();

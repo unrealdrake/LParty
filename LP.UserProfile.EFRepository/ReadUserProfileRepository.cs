@@ -1,5 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading.Tasks;
 using LP.UserProfile.Domain.User_Area.Core;
 using LP.UserProfile.Domain.User_Area.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -16,13 +17,13 @@ namespace LP.UserProfile.EFRepository
             _efContext = efContext;
         }
 
-        public ReadOnlyCollection<User> GetAllUsers()
+        public async Task<ReadOnlyCollection<User>> GetAllUsersAsync()
         {
-            return _efContext.UserProfiles
+            return (await _efContext.UserProfiles
                         //.Include(up => up.LoginData)
                         //.Include(up => up.PersonalInformation)
                         .Include(up => up.Address).
-                        AsNoTracking().ToList().AsReadOnly();
+                        AsNoTracking().ToListAsync()).AsReadOnly();
         }
     }
 }

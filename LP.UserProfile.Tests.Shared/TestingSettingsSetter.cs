@@ -37,7 +37,7 @@ namespace LP.UserProfile.Tests.Shared
         [TestCleanup]
         public void CleanDatabase()
         {
-            _writeUserProfileRepository.ClearAll();
+            _writeUserProfileRepository.ClearAllAsync().Wait();
         }
     }
 }

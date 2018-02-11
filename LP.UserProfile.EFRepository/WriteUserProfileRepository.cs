@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Threading.Tasks;
 using LP.UserProfile.Domain.User_Area.Core;
 using LP.UserProfile.Domain.User_Area.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -12,29 +13,29 @@ namespace LP.UserProfile.EFRepository
         {
         }
 
-        public void AddNewProfile(User userProfile)
+        public async Task AddNewProfileAsync(User userProfile)
         {
-            Add(userProfile);
+            await AddAsync(userProfile);
         }
 
-        public void ClearAll()
+        public async Task ClearAllAsync()
         {
             foreach (var userProfile in Context.Set<User>().
                 Include(u => u.PersonalInformation).
                 Include(u => u.LoginData).
                 ToList())
             {
-                Delete(userProfile);
+                await DeleteAsync(userProfile);
             }
         }
 
-        public void Delete(User userProfile)
+        public async Task DeleteAsync(User userProfile)
         {
             Context.Attach(userProfile);
             Context.Remove(userProfile.PersonalInformation);
             Context.Remove(userProfile.LoginData);
             Context.Remove(userProfile);
-            Context.SaveChanges();
+            await Context.SaveChangesAsync();
         }
     }
 }

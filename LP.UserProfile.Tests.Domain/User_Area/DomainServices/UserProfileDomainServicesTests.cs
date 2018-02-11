@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using System.Threading.Tasks;
 using LP.UserProfile.Domain.User_Area.DomainServices;
 using LP.UserProfile.Domain.User_Area.Repositories;
 using LP.UserProfile.Tests.Shared;
@@ -24,27 +25,27 @@ namespace LP.UserProfile.Tests.Domain.User_Area.DomainServices
 
         [ExpectedException(typeof(ArgumentException))]
         [TestMethod]
-        public void CheckAlreadyExistsEmptyLogin()
+        public async Task CheckAlreadyExistsEmptyLogin()
         {
-            _userProfileDomainService.IsAlreadyExist("");
+            await _userProfileDomainService.IsAlreadyExistAsync("");
         }
 
         [ExpectedException(typeof(ArgumentException))]
         [TestMethod]
-        public void CheckAlreadyExistsNullLogin()
+        public async Task CheckAlreadyExistsNullLogin()
         {
-            _userProfileDomainService.IsAlreadyExist(null);
+            await _userProfileDomainService.IsAlreadyExistAsync(null);
         }
 
         [TestMethod]
-        public void MustReturnTrueIfUserExists()
+        public async Task MustReturnTrueIfUserExists()
         {
-            var allUsers = _readUserProfileRepository.GetAllUsers();
+            var allUsers = await _readUserProfileRepository.GetAllUsersAsync();
             if (allUsers.Any())
             {
                 var user = allUsers.First();
 
-                Assert.IsTrue(_userProfileDomainService.IsAlreadyExist(user.LoginData.Login));
+                Assert.IsTrue(await _userProfileDomainService.IsAlreadyExistAsync(user.LoginData.Login));
             }
         }
     }

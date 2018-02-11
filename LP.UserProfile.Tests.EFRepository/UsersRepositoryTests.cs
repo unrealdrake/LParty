@@ -2,6 +2,7 @@ using LP.UserProfile.Tests.Shared;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shared.CompositionRoot;
 using System.Linq;
+using System.Threading.Tasks;
 using LP.UserProfile.Domain.User_Area.Core;
 using LP.UserProfile.Domain.User_Area.Repositories;
 
@@ -32,30 +33,30 @@ namespace LP.UserProfile.Tests.EFRepository
         }
 
         [TestMethod]
-        public void GetUsers_NotFails()
+        public async Task GetUsers_NotFails()
         {
-            _readUsersRepository.GetAllUsers();
+            await _readUsersRepository.GetAllUsersAsync();
         }
 
         [TestMethod]
-        public void AddNewUser_NotFails()
+        public async Task AddNewUser_NotFails()
         {
-            int allUsersCount = _readUsersRepository.GetAllUsers().Count();
-            _writeUsersRepository.AddNewProfile(defaultUser);
-            int allUsersCountAfterSaving = _readUsersRepository.GetAllUsers().Count();
+            int allUsersCount = (await _readUsersRepository.GetAllUsersAsync()).Count();
+            await _writeUsersRepository.AddNewProfileAsync(defaultUser);
+            int allUsersCountAfterSaving = (await _readUsersRepository.GetAllUsersAsync()).Count();
             Assert.AreEqual(allUsersCount + 1, allUsersCountAfterSaving);
         }
 
         [TestMethod]
-        public void DeleteExistingUser_NotFails()
+        public async Task DeleteExistingUser_NotFails()
         {
-            var existingUser = _readUsersRepository.GetAllUsers().FirstOrDefault();
-            int allUsersCount = _readUsersRepository.GetAllUsers().Count();
+            var existingUser = (await _readUsersRepository.GetAllUsersAsync()).FirstOrDefault();
+            int allUsersCount = (await _readUsersRepository.GetAllUsersAsync()).Count();
             if (existingUser != null)
             {
-                _writeUsersRepository.Delete(existingUser);
+                await _writeUsersRepository.DeleteAsync(existingUser);
             }
-            int allUsersCountAfterSaving = _readUsersRepository.GetAllUsers().Count();
+            int allUsersCountAfterSaving = (await _readUsersRepository.GetAllUsersAsync()).Count();
             Assert.AreEqual(allUsersCount - 1, allUsersCountAfterSaving);
         }
     }

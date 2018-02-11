@@ -1,4 +1,5 @@
-﻿using LP.UserProfile.Domain.User_Area.Core;
+﻿using System.Threading.Tasks;
+using LP.UserProfile.Domain.User_Area.Core;
 using LP.UserProfile.Domain.User_Area.DomainServices;
 using LP.UserProfile.Domain.User_Area.Events;
 using LP.UserProfile.Domain.User_Area.Repositories;
@@ -34,13 +35,13 @@ namespace LP.UserProfile.Tests.Domain.User_Area.Events
         }
 
         [TestMethod]
-        public void UserProfileCreatedEventRaised()
+        public async Task UserProfileCreatedEventRaised()
         {
             DomainEvents.Register<UserProfileCreatedEvent>((ev) =>
             {
                 Assert.AreEqual(_defaultProfile.Id, ev.UserProfileId);
             });
-            _userProfileDomainService.RegisterNewProfile(_defaultProfile);
+            await _userProfileDomainService.RegisterNewProfileAsync(_defaultProfile);
         }
     }
 }
