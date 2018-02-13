@@ -51,11 +51,14 @@ namespace LP.UserProfile.Tests.EFRepository
         public async Task DeleteExistingUser_NotFails()
         {
             var existingUser = (await _readUsersRepository.GetAllUsersAsync()).FirstOrDefault();
-            int allUsersCount = (await _readUsersRepository.GetAllUsersAsync()).Count();
-            if (existingUser != null)
+            if (existingUser == null)
             {
-                await _writeUsersRepository.DeleteAsync(existingUser);
+                await _writeUsersRepository.AddNewProfileAsync(defaultUser);
             }
+
+            int allUsersCount = (await _readUsersRepository.GetAllUsersAsync()).Count();
+            var existingUsr = (await _readUsersRepository.GetAllUsersAsync()).FirstOrDefault();
+            await _writeUsersRepository.DeleteAsync(existingUsr);
             int allUsersCountAfterSaving = (await _readUsersRepository.GetAllUsersAsync()).Count();
             Assert.AreEqual(allUsersCount - 1, allUsersCountAfterSaving);
         }

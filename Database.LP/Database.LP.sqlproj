@@ -67,4 +67,7 @@
   <ItemGroup>
     <RefactorLog Include="Database.LP.refactorlog" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Database.LP.publish.xml" />
+  </ItemGroup>
 </Project>
