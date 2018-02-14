@@ -4,4 +4,14 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SharedKernel\SharedKernel.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="FluentValidation">
+      <HintPath>C:\Users\unrea\.nuget\packages\fluentvalidation\7.2.0\lib\netstandard1.0\FluentValidation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
