@@ -15,7 +15,6 @@ namespace SharedKernel.BaseAbstractions.Specification
             _left = left;
         }
 
-
         public override Expression<Func<T, bool>> ToExpression()
         {
             var leftExpression = _left.ToExpression();

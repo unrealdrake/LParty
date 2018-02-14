@@ -7,7 +7,7 @@ namespace LP.UserProfile.Domain.User_Area.Core.Specifications
 {
     public class UserExistsByLoginSpec : Specification<User>
     {
-        private readonly string _login;
+        protected readonly string _login;
 
         public UserExistsByLoginSpec(string email)
         {

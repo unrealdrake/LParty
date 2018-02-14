@@ -30,7 +30,7 @@ namespace LP.UserProfile.Tests.Shared
         {
             foreach (var profile in NewProfileRegisters.Profiles)
             {
-                Mediator.Send(new RegisterNewProfileCommand(profile)).ConfigureAwait(false);
+                Mediator.Send(new RegisterNewProfileCommand(profile)).Wait();
             }
         }
 

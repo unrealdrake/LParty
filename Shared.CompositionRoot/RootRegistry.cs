@@ -15,7 +15,7 @@ namespace Shared.CompositionRoot
             For<IReadUserProfileRepository>().Use<ReadUserProfileRepository>().Transient();
             For<IWriteUserProfileRepository>().Use<WriteUserProfileRepository>().Transient();
 
-            For<UserProfileEFContext>().Use(ctx => new UserProfileEFContext(DependenciesRegistrator.Settings.ConnectionString));
+            For<UserProfileEFContext>().Use(ctx => new UserProfileEFContext(DependenciesRegistrator.Settings.ConnectionString)).Transient();
 
             For<ICorrelatedResolverObligation>().Use<DependenciesRegistrator>();
 

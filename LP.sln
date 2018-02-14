@@ -29,7 +29,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{1BF0B3
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedKernel", "SharedKernel\SharedKernel.csproj", "{AD518C74-9F40-4B8D-84A7-96877F8F3FCC}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repositories", "Repositories", "{1E3C64D7-058B-4E13-8732-7B06784B3EE6}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{1E3C64D7-058B-4E13-8732-7B06784B3EE6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LP.UserProfile.EFRepository", "LP.UserProfile.EFRepository\LP.UserProfile.EFRepository.csproj", "{795B2420-A3CD-40AA-8BDB-EB264456F3BD}"
 EndProject
@@ -75,7 +75,7 @@ Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-co
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mobile", "Mobile", "{1F202C04-8CC7-4E0D-A892-6DFD76EC0B86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clients.Web.Endpoint", "Clients\Web\Clients.Web.Endpoint\Clients.Web.Endpoint.csproj", "{E093C65B-B4D2-4D24-84CC-41F00F688EBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clients.Web.Endpoint", "Clients\Web\Clients.Web.Endpoint\Clients.Web.Endpoint.csproj", "{E093C65B-B4D2-4D24-84CC-41F00F688EBC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

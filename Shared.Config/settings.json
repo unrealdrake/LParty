@@ -1,7 +1,7 @@
 ﻿{
   "connectionStrings": {
-    "LP": "Server=tcp:172.30.79.154;Database=LP;User Id=sa;Password=Pass@word;",
-    "LP_Testing": "Server=tcp:172.30.79.154;Database=LP_Testing;User Id=sa;Password=Pass@word;"
+    "LP": "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=LP;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True;",
+    "LP_Testing": "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=LP_Testing;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True;"
   },
   "systemApiUrls": {
     "UserProfilesApi": "http://localhost:52359/api"
