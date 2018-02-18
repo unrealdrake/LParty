@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Net;
 using FluentValidation.Results;
-using LP.UserProfile.Api.Middlewares.ErrorHandling;
-using LP.UserProfile.Gateway.ErrorCodes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Shared.Gateway.ErrorCodes;
+using Shared.Gateway.Middlewares.ErrorHandling;
 using SharedKernel.Infrastructure;
 
-namespace LP.UserProfile.Tests.Gateway.Api.Infrastructure
+namespace Shared.Gateway.Tests.Infrastructure
 {
     [TestClass]
     public class ExceptionConvertingStrategiesTests

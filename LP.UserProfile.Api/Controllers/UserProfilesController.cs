@@ -1,10 +1,10 @@
 ﻿using System.Threading.Tasks;
-using LP.UserProfile.Api.Middlewares.ErrorHandling;
 using LP.UserProfile.ApplicationService.Write.RegisterNewProfile;
 using LP.UserProfile.Domain.User_Area.Repositories;
 using LP.UserProfile.Gateway.Dto;
 using Microsoft.AspNetCore.Mvc;
 using MediatR;
+using Shared.Gateway.Middlewares.ErrorHandling;
 
 namespace LP.UserProfile.Api.Controllers
 {

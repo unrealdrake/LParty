@@ -6,31 +6,18 @@ using Shared.CompositionRoot;
 using Shared.Gateway;
 using StructureMap;
 
-namespace LP.UserProfile.Api
+namespace LP.EventSystem.Api
 {
-    /// <summary>
-    /// Startup configuration class
-    /// </summary>
     public class Startup
     {
-        /// <summary>
-        /// Startup constructor
-        /// </summary>
-        /// <param name="configuration"></param>
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
-        /// <summary>
-        /// Configuration
-        /// </summary>
         public IConfiguration Configuration { get; }
 
-        /// <summary>
-        /// Services configuring
-        /// </summary>
-        /// <param name="services"></param>
+        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
@@ -46,11 +33,7 @@ namespace LP.UserProfile.Api
             DependenciesRegistrator.Register(registry);
         }
 
-        /// <summary>
-        /// General configuring
-        /// </summary>
-        /// <param name="app"></param>
-        /// <param name="env"></param>
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             StartupConfig.ConfigureApp(app, env);

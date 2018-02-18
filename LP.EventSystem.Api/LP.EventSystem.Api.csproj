@@ -5,26 +5,27 @@
     <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\netcoreapp2.0\LP.UserProfile.Api.xml</DocumentationFile>
-  </PropertyGroup>
-
   <ItemGroup>
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MediatR" Version="3.0.1" />
-    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
   </ItemGroup>
 
   <ItemGroup>
-    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\Shared.Gateway\Shared.Gateway.csproj" />
     <ProjectReference Include="..\Shared.CompositionRoot\Shared.CompositionRoot.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="StructureMap">
+      <HintPath>C:\Users\unrea\.nuget\packages\structuremap\4.5.2\lib\netstandard1.5\StructureMap.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

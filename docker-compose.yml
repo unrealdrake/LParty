@@ -16,3 +16,10 @@ services:
       - ACCEPT_EULA=Y
     ports:
       - "1433:1433"
+
+  lp.eventsystem.api:
+    image: lp.eventsystem.api
+    build:
+      context: .
+      dockerfile: LP.EventSystem.Api\Dockerfile
+

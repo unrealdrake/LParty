@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Net;
 using System.Threading.Tasks;
-using LP.UserProfile.Api.Middlewares.ErrorHandling;
 using Microsoft.AspNetCore.Http;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Shared.Gateway.Middlewares.ErrorHandling;
 
-namespace LP.UserProfile.Tests.Gateway.Api.Infrastructure
+namespace Shared.Gateway.Tests.Infrastructure
 {
     [TestClass]
     public class ErrorHandlingMiddlewareTests
