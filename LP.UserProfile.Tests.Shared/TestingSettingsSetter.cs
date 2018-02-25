@@ -1,5 +1,7 @@
-﻿using LP.UserProfile.ApplicationService.Write.RegisterNewProfile;
+﻿using System.Collections.Generic;
+using LP.UserProfile.ApplicationService.Write.RegisterNewProfile;
 using LP.UserProfile.Domain.User_Area.Repositories;
+using LP.UserProfile.Gateway.Dto;
 using LP.UserProfile.Tests.Shared.SampleData;
 using MediatR;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -12,6 +14,7 @@ namespace LP.UserProfile.Tests.Shared
     {
         protected static IMediator Mediator;
         private static IWriteUserProfileRepository _writeUserProfileRepository;
+        protected static IList<RegisterNewProfileDto> Profiles;
 
         protected static void Init(TestContext testContext)
         {
@@ -28,6 +31,7 @@ namespace LP.UserProfile.Tests.Shared
 
         private static void FillDatabaseWithTestData()
         {
+            Profiles = NewProfileRegisters.Profiles;
             foreach (var profile in NewProfileRegisters.Profiles)
             {
                 Mediator.Send(new RegisterNewProfileCommand(profile)).Wait();

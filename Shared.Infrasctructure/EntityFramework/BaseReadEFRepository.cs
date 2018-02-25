@@ -17,5 +17,10 @@ namespace Shared.Infrasctructure.EntityFramework
         {
             return await Context.Set<TRoot>().Where(specification.ToExpression()).ToListAsync();
         }
+
+        public async Task<TRoot> FindFirstOrDefaultAsync(Specification<TRoot> specification)
+        {
+            return await Context.Set<TRoot>().Where(specification.ToExpression()).FirstOrDefaultAsync();
+        }
     }
 }

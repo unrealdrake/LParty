@@ -13,8 +13,4 @@
     <ProjectReference Include="..\LP.UserProfile.Gateway.Models\LP.UserProfile.Gateway.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Read\" />
-  </ItemGroup>
-
 </Project>

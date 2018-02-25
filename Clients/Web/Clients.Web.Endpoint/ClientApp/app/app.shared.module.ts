@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { Http } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './components/app/app.component';
@@ -14,7 +14,7 @@ import { LoginComponent } from './components/login/login.component';
     ],
     imports: [
         CommonModule,
-        HttpModule,
+        Http,
         FormsModule,
         RouterModule.forRoot([
             { path: '', redirectTo: 'login', pathMatch: 'full' },
