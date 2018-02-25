@@ -5,6 +5,7 @@ using LP.UserProfile.Domain.User_Area.Repositories;
 using LP.UserProfile.Tests.Shared;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shared.CompositionRoot;
+using Shared.Infrasctructure.Errors;
 
 namespace LP.UserProfile.Tests.ApplicationService
 {
@@ -21,15 +22,24 @@ namespace LP.UserProfile.Tests.ApplicationService
         }
 
         [TestMethod]
-        public async Task GetExistingUserNotNull()
+        public async Task GetExistingUser_NotNull()
         {
             var existingUser = (await _readUserProfileRepository.GetAllUsersAsync()).FirstOrDefault();
-            if (existingUser !=null)
+            if (existingUser != null)
             {
                 var user = await Mediator.Send(new GetUserProfileQuery(existingUser.LoginData.Login, existingUser.LoginData.Password));
 
                 Assert.IsNotNull(user);
             }
         }
+
+        [TestMethod]
+        public async Task GetNotExistingUser_ResponseWithException()
+        {
+            var userResult = await Mediator.Send(new GetUserProfileQuery("1", "1"));
+
+            Assert.IsTrue(userResult.Exceptions.Contains(ErrorsEnum.NotFound));
+        }
     }
 }
+
