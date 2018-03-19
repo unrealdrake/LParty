@@ -1,10 +1,12 @@
 ﻿using System.Threading.Tasks;
+using LP.UserProfile.ApplicationService.Read.GetUserProfile;
 using LP.UserProfile.ApplicationService.Write.RegisterNewProfile;
 using LP.UserProfile.Domain.User_Area.Repositories;
 using LP.UserProfile.Gateway.Dto;
 using Microsoft.AspNetCore.Mvc;
 using MediatR;
 using Shared.Gateway.Middlewares.ErrorHandling;
+using Shared.Infrasctructure.RequestResponse;
 
 namespace LP.UserProfile.Api.Controllers
 {
@@ -36,6 +38,33 @@ namespace LP.UserProfile.Api.Controllers
         public async Task<bool> Post([FromBody]RegisterNewProfileDto registerProfileModel)
         {
             return await _mediator.Send(new RegisterNewProfileCommand(registerProfileModel));
+        }
+
+
+        /// <summary>
+        /// Gets profile 
+        /// </summary>
+        /// <param name="login">Login</param>
+        /// <param name="password">Password</param>
+        /// <returns>Is user profile was created successfully</returns>
+        /// <response code="400">Invalid input data</response>
+        [HttpGet]
+        [ProducesResponseType(typeof(ResponseError), 400)]
+        public async Task<GetUserProfileDto> Get(string login, string password)
+        {
+            BaseResponse<GetUserProfileResponse> userProfile = await _mediator.Send(new GetUserProfileQuery(login, password));
+            if (!userProfile.Success)
+            {
+                return new GetUserProfileDto {UserWasFound = false};
+            }
+
+            return new GetUserProfileDto
+            {
+                Id = userProfile.Value.Id,
+                FirstName = userProfile.Value.FirstName,
+                LastName = userProfile.Value.LastName,
+                UserWasFound = userProfile.Success
+            };
         }
     }
 }

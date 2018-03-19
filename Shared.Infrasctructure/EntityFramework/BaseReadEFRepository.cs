@@ -15,11 +15,13 @@ namespace Shared.Infrasctructure.EntityFramework
 
         public async Task<IReadOnlyList<TRoot>> FindAsync(Specification<TRoot> specification)
         {
-            return await Context.Set<TRoot>().Where(specification.ToExpression()).ToListAsync();
+            var finalExpression = SpecificationOverridingBuilder.ReplaceWithOverridings(specification);
+            return await Context.Set<TRoot>().Where(finalExpression.ToExpression()).ToListAsync();
         }
 
         public async Task<TRoot> FindFirstOrDefaultAsync(Specification<TRoot> specification)
         {
+            SpecificationOverridingBuilder.ReplaceWithOverridings(specification);
             return await Context.Set<TRoot>().Where(specification.ToExpression()).FirstOrDefaultAsync();
         }
     }

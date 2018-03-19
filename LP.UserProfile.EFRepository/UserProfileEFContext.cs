@@ -1,5 +1,8 @@
-﻿using LP.UserProfile.Domain.User_Area.Core;
+﻿using System;
+using LP.UserProfile.Domain.User_Area.Core;
+using LP.UserProfile.Domain.User_Area.Core.Specifications;
 using LP.UserProfile.EFRepository.FluentMappings;
+using LP.UserProfile.EFRepository.SpecificationOverridings;
 using Microsoft.EntityFrameworkCore;
 using Shared.Infrasctructure.EntityFramework;
 
@@ -9,6 +12,11 @@ namespace LP.UserProfile.EFRepository
     {
         public DbSet<User> UserProfiles { get; set; }
         private string ConnectionString { get; }
+
+        static UserProfileEFContext()
+        {
+            SpecificationOverridingBuilder.RegisterOverriding(typeof(UserExistsByLoginSpec), typeof(UserExistsByLoginSpec_EF));
+        }
 
         public UserProfileEFContext(string connectionString)
         {
@@ -26,6 +34,12 @@ namespace LP.UserProfile.EFRepository
 
             modelBuilder.AddConfiguration(new UserConfiguration());
             modelBuilder.AddConfiguration(new AddressConfiguration());
+        }
+
+        [DbFunction]
+        public static bool UserExistsByLogin(string email)
+        {
+            throw new Exception();
         }
     }
 }

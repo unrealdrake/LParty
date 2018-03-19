@@ -1,7 +1,7 @@
-﻿using System;
-using System.Linq.Expressions;
-using Shared.Infrasctructure.ObjectExtensions;
+﻿using Shared.Infrasctructure.ObjectExtensions;
 using SharedKernel.BaseAbstractions.Specification;
+using System;
+using System.Linq.Expressions;
 
 namespace LP.UserProfile.Domain.User_Area.Core.Specifications
 {

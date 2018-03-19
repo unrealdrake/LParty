@@ -1,5 +1,7 @@
 ﻿import { Component } from '@angular/core';
-import { Http} from '@angular/http';
+import { Http } from '@angular/http';
+import GetUserProfileDto = Clients.Web.Endpoint.ClientApp.app.models.GetUserProfileDto;
+
 
 @Component({
     selector: 'login',
@@ -11,7 +13,9 @@ export class LoginComponent {
 
     email = "";
     password = "";
+    getUserProfileDto: GetUserProfileDto;
+
     login(): void {
-        this.http.get("api/UserProfiles").subscribe(())
+        this.http.get<GetUserProfileDto>(Urls.userProfileBase).subscribe((data) => {this.getUserProfileDto = data;});
     }
 }

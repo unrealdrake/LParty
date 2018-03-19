@@ -1,11 +1,11 @@
-﻿using System.Threading.Tasks;
-using LP.UserProfile.Domain.User_Area.Core;
+﻿using LP.UserProfile.Domain.User_Area.Core;
 using LP.UserProfile.Domain.User_Area.Core.Specifications;
 using LP.UserProfile.Domain.User_Area.Repositories;
 using MediatR;
 using Shared.Infrasctructure.Errors;
 using Shared.Infrasctructure.ObjectExtensions;
 using Shared.Infrasctructure.RequestResponse;
+using System.Threading.Tasks;
 
 namespace LP.UserProfile.ApplicationService.Read.GetUserProfile
 {

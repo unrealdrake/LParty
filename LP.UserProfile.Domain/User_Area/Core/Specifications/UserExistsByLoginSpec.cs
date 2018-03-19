@@ -7,17 +7,17 @@ namespace LP.UserProfile.Domain.User_Area.Core.Specifications
 {
     public class UserExistsByLoginSpec : Specification<User>
     {
-        private readonly string _login;
+        public readonly string Login;
 
         public UserExistsByLoginSpec(string email)
         {
-            _login = email;
+            Login = email;
             email.NotNullOrEmpty();
         }
 
         public override Expression<Func<User, bool>> ToExpression()
         {
-            return usr => usr.LoginData.Login.ToLower() == _login.ToLower();
+            return usr => usr.LoginData.Login.ToLower() == Login.ToLower();
         }
     }
 }

@@ -16,8 +16,4 @@
     <ProjectReference Include="..\Shared.Infrasctructure\Shared.Infrasctructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="SpecificationOverridings\" />
-  </ItemGroup>
-
 </Project>

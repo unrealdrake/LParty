@@ -21,10 +21,21 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\app\Global.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\..\LP.UserProfile.Gateway.Models\LP.UserProfile.Gateway.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\app\Global.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ClientApp\app\models\GetUserProfileDto.ts">
+      <CustomToolNamespace>..\..\..\LP.UserProfile.Gateway.Models\Dto\GetUserProfileDto.cs</CustomToolNamespace>
+    </None>
     <None Update="ClientApp\app\models\RegisterNewProfileDto.ts">
       <CustomToolNamespace>..\..\..\LP.UserProfile.Gateway.Models\Dto\RegisterNewProfileDto.cs</CustomToolNamespace>
     </None>
