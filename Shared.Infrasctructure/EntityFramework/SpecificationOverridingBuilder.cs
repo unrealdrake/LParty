@@ -7,7 +7,7 @@ namespace Shared.Infrasctructure.EntityFramework
 {
     public class SpecificationOverridingBuilder
     {
-        private static Dictionary<Type, Type> Overridings = new Dictionary<Type, Type>();
+        private static readonly Dictionary<Type, Type> Overridings = new Dictionary<Type, Type>();
 
         public static void RegisterOverriding(Type originalSpec, Type destinationSpec)
         {

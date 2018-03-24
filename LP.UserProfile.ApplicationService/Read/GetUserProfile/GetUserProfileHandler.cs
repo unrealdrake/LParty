@@ -5,11 +5,12 @@ using MediatR;
 using Shared.Infrasctructure.Errors;
 using Shared.Infrasctructure.ObjectExtensions;
 using Shared.Infrasctructure.RequestResponse;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace LP.UserProfile.ApplicationService.Read.GetUserProfile
 {
-    public class GetUserProfileHandler : IAsyncRequestHandler<GetUserProfileQuery, BaseResponse<GetUserProfileResponse>>
+    public class GetUserProfileHandler : IRequestHandler<GetUserProfileQuery, BaseResponse<GetUserProfileResponse>>
     {
         private readonly IReadUserProfileRepository _userProfileRepository;
 
@@ -18,7 +19,7 @@ namespace LP.UserProfile.ApplicationService.Read.GetUserProfile
             _userProfileRepository = userProfileRepository;
         }
 
-        public async Task<BaseResponse<GetUserProfileResponse>> Handle(GetUserProfileQuery query)
+        public async Task<BaseResponse<GetUserProfileResponse>> Handle(GetUserProfileQuery query, CancellationToken ct)
         {
             query.NotNull();
 

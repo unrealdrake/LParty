@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using LP.UserProfile.ApplicationService.Read.GetUserProfile;
 using LP.UserProfile.ApplicationService.Write.RegisterNewProfile;
-using LP.UserProfile.Domain.User_Area.Repositories;
+using LP.UserProfile.Domain.User_Area.DomainServices;
 using LP.UserProfile.Gateway.Dto;
 using Microsoft.AspNetCore.Mvc;
 using MediatR;
@@ -18,13 +18,13 @@ namespace LP.UserProfile.Api.Controllers
     public class UserProfilesController : Controller
     {
         private readonly IMediator _mediator;
-        private readonly IReadUserProfileRepository _readUserProfileRepository;
+        private readonly UserProfileDomainService _userProfileDomainService;
 
         /// <inheritdoc />
-        public UserProfilesController(IMediator mediatr, IReadUserProfileRepository readUserProfileRepository)
+        public UserProfilesController(IMediator mediatr, UserProfileDomainService userProfileDomainService)
         {
             _mediator = mediatr;
-            _readUserProfileRepository = readUserProfileRepository;
+            _userProfileDomainService = userProfileDomainService;
         }
 
         /// <summary>

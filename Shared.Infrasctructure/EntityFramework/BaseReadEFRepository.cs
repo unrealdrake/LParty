@@ -21,8 +21,8 @@ namespace Shared.Infrasctructure.EntityFramework
 
         public async Task<TRoot> FindFirstOrDefaultAsync(Specification<TRoot> specification)
         {
-            SpecificationOverridingBuilder.ReplaceWithOverridings(specification);
-            return await Context.Set<TRoot>().Where(specification.ToExpression()).FirstOrDefaultAsync();
+            var finalExpression = SpecificationOverridingBuilder.ReplaceWithOverridings(specification);
+            return await Context.Set<TRoot>().Where(finalExpression.ToExpression()).FirstOrDefaultAsync();
         }
     }
 }

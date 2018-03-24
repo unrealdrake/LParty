@@ -1,12 +1,12 @@
-using System;
-using System.Linq;
 using LP.UserProfile.ApplicationService.Write.RegisterNewProfile;
+using LP.UserProfile.Domain.User_Area.Repositories;
+using LP.UserProfile.Gateway.Dto;
 using LP.UserProfile.Tests.Shared;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shared.CompositionRoot;
+using System;
+using System.Linq;
 using System.Threading.Tasks;
-using LP.UserProfile.Domain.User_Area.Repositories;
-using LP.UserProfile.Gateway.Dto;
 
 namespace LP.UserProfile.Tests.ApplicationService
 {

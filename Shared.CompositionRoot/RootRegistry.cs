@@ -1,4 +1,5 @@
-﻿using LP.UserProfile.Domain.User_Area.Repositories;
+﻿using LP.UserProfile.Domain.User_Area.DomainServices;
+using LP.UserProfile.Domain.User_Area.Repositories;
 using LP.UserProfile.EFRepository;
 using Shared.Infrasctructure.DomainEvents;
 using SharedKernel.DomainEvents;
@@ -14,6 +15,8 @@ namespace Shared.CompositionRoot
 
             For<IReadUserProfileRepository>().Use<ReadUserProfileRepository>().Transient();
             For<IWriteUserProfileRepository>().Use<WriteUserProfileRepository>().Transient();
+
+            For<UserProfileDomainService>().Use<UserProfileDomainService>();
 
             For<UserProfileEFContext>().Use(ctx => new UserProfileEFContext(DependenciesRegistrator.Settings.ConnectionString)).Transient();
 

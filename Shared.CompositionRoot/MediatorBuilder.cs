@@ -17,10 +17,7 @@ namespace Shared.CompositionRoot
                 scanner.ConnectImplementationsToTypesClosing(typeof(IHandles<>));
                 scanner.ConnectImplementationsToTypesClosing(typeof(IRequestHandler<>)); // Handlers with no response
                 scanner.ConnectImplementationsToTypesClosing(typeof(IRequestHandler<,>)); // Handlers with a response
-                scanner.ConnectImplementationsToTypesClosing(typeof(IAsyncRequestHandler<>)); // Async handlers with no response
-                scanner.ConnectImplementationsToTypesClosing(typeof(IAsyncRequestHandler<,>)); // Async Handlers with a response
                 scanner.ConnectImplementationsToTypesClosing(typeof(INotificationHandler<>));
-                scanner.ConnectImplementationsToTypesClosing(typeof(IAsyncNotificationHandler<>));
             });
             cfg.For<SingleInstanceFactory>().Use<SingleInstanceFactory>(ctx => ctx.GetInstance);
             cfg.For<MultiInstanceFactory>().Use<MultiInstanceFactory>(ctx => ctx.GetAllInstances);

@@ -35,11 +35,5 @@ namespace LP.UserProfile.EFRepository
             modelBuilder.AddConfiguration(new UserConfiguration());
             modelBuilder.AddConfiguration(new AddressConfiguration());
         }
-
-        [DbFunction]
-        public static bool UserExistsByLogin(string email)
-        {
-            throw new Exception();
-        }
     }
 }
