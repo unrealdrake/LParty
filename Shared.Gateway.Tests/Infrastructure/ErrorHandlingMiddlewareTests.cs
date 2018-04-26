@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Shared.Gateway.Infrastructure;
+using System;
 using System.Net;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Shared.Gateway.Middlewares.ErrorHandling;
 
 namespace Shared.Gateway.Tests.Infrastructure
 {

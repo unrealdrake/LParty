@@ -5,7 +5,7 @@ using LP.UserProfile.Domain.User_Area.DomainServices;
 using LP.UserProfile.Gateway.Dto;
 using Microsoft.AspNetCore.Mvc;
 using MediatR;
-using Shared.Gateway.Middlewares.ErrorHandling;
+using Shared.Gateway.Infrastructure;
 using Shared.Infrasctructure.RequestResponse;
 
 namespace LP.UserProfile.Api.Controllers

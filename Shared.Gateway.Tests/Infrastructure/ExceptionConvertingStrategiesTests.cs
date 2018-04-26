@@ -1,11 +1,11 @@
-﻿using System;
+﻿using FluentValidation.Results;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Shared.Gateway.Infrastructure.ErrorHandling;
+using Shared.Gateway.Infrastructure.ErrorHandling.ErrorCodes;
+using SharedKernel.Infrastructure;
+using System;
 using System.Collections.Generic;
 using System.Net;
-using FluentValidation.Results;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Shared.Gateway.ErrorCodes;
-using Shared.Gateway.Middlewares.ErrorHandling;
-using SharedKernel.Infrastructure;
 
 namespace Shared.Gateway.Tests.Infrastructure
 {

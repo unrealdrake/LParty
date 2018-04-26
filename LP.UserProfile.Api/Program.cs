@@ -26,7 +26,6 @@ namespace LP.UserProfile.Api
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args).
                 UseStartup<Startup>().
-                UseDI().
                 Build();
     }
 }
